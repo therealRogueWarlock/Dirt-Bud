@@ -1,4 +1,4 @@
-# MotocrossPal
+# Dirt Bud
 
 ## Contents
 
@@ -8,7 +8,7 @@
 
 ## What is this app?
 
-The MotocrossPal is the new and innovative tool, for everything Motocross. This app will help you manage your own Dirtbikes, keeping track of the lifetime of your parts as well as help you improve the situation in your garage. This app will help you keep track of all your parts, both installed and spare, as well as help you with a in-app toolbox keeping your tools stored.
+The Dirt Bud app is the new and innovative tool, for everything Motocross. This app will help you manage your own Dirtbikes, keeping track of the lifetime of your parts as well as help you improve the situation in your garage. This app will help you keep track of all your parts, both installed and spare, as well as help you with a in-app toolbox keeping your tools stored.
 
 This will also help you keep note of the different dates you work on your Dirtbike, and let you write down the specifics of what you have done, such as Oil Change, New Chain, or maybe just an entirely redo of the Fork
 
