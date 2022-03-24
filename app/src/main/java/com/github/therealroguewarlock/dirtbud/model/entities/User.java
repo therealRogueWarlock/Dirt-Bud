@@ -2,7 +2,7 @@ package com.github.therealroguewarlock.dirtbud.model.entities;
 
 public class User {
 
-	private String userId;
+	private final String userId;
 
 	private String firstName;
 	private String lastName;
@@ -18,7 +18,6 @@ public class User {
 		this.age = age;
 	}
 
-
 	public String getUserId() {
 		return userId;
 	}
@@ -29,6 +28,10 @@ public class User {
 
 	public String getLastName() {
 		return lastName;
+	}
+
+	public String getFullName() {
+		return String.format("%s %s", firstName, lastName);
 	}
 
 	public int getAge() {
@@ -43,9 +46,10 @@ public class User {
 		return inventory;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+	// FIXME: Remove this?
+//	public void setUserId(String userId) {
+//		this.userId = userId;
+//	}
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;

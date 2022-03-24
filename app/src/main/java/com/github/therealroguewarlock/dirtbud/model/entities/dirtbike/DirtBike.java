@@ -4,7 +4,7 @@ import com.github.therealroguewarlock.dirtbud.model.entities.PartList;
 
 public class DirtBike {
 
-	private PartList partList;
+	private PartList partList; // TODO: Convert to a simple List<Part>?
 
 
 }
