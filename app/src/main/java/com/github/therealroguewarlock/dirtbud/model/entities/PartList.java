@@ -1,7 +1,7 @@
 package com.github.therealroguewarlock.dirtbud.model.entities;
 
 
-import com.example.birtbud.model.entities.dirtbike.Part;
+import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 
 import java.util.ArrayList;
 
