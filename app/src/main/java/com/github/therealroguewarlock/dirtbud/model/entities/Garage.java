@@ -4,18 +4,19 @@ package com.github.therealroguewarlock.dirtbud.model.entities;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Garage {
-	private final int maxAMountOfDirtBikes;
-	private ArrayList<DirtBike> dirtBikes;
+	private final int maxAmountOfDirtBikes;
+	private List<DirtBike> dirtBikes;
 
 	public Garage(int maxAmountOfBikes) {
-		this.maxAMountOfDirtBikes = maxAmountOfBikes;
+		this.maxAmountOfDirtBikes = maxAmountOfBikes;
 		dirtBikes = new ArrayList<>();
 	}
 
 	public int getMaxAmountOfDirtBikes(){
-		return maxAMountOfDirtBikes;
+		return maxAmountOfDirtBikes;
 	}
 
 	public int getAmountOfDirtBikes(){
