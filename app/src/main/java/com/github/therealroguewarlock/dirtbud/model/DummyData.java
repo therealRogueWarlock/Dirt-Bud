@@ -25,7 +25,7 @@ public class DummyData {
 			r.nextBytes(chars);
 			dummyDirtBikes.add(
 					new DirtBike(
-							new String(chars, StandardCharsets.US_ASCII),
+							new String(chars, StandardCharsets.ISO_8859_1),
 					100 + r.nextInt(300),
 					50 + r.nextInt(300),
 					100 + r.nextInt(80),

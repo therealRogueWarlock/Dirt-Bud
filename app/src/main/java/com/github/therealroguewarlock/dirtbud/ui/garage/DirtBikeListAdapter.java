@@ -39,8 +39,8 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 
 	private int funColor(int seed) {
 		return Color.argb(
-				(seed * seed * 20) % 100,
-				(seed * 32) % 255,
+				(seed * dirtBikes.size() * 20) % 100,
+				(seed * 32 + dirtBikes.size() * dirtBikes.size()) % 255,
 				(((seed % 4) == 0) ? 18 : (((seed % 3) == 0) ? seed : ((32 * 48) + 20))) % 255,
 				(seed * 196) % 255
 		);
