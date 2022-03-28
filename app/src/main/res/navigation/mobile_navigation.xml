@@ -12,14 +12,22 @@
 			tools:layout = "@layout/fragment_home" />
 
 	<fragment
-			android:id = "@+id/nav_gallery"
-			android:name = "com.github.therealroguewarlock.dirtbud.ui.gallery.GalleryFragment"
-			android:label = "@string/menu_gallery"
-			tools:layout = "@layout/fragment_gallery" />
+			android:id = "@+id/nav_profile"
+			android:name = "com.github.therealroguewarlock.dirtbud.ui.profile.ProfileFragment"
+			android:label = "@string/menu_profile"
+			tools:layout = "@layout/fragment_profile" />
 
 	<fragment
-			android:id = "@+id/nav_slideshow"
-			android:name = "com.github.therealroguewarlock.dirtbud.ui.slideshow.SlideshowFragment"
-			android:label = "@string/menu_slideshow"
-			tools:layout = "@layout/fragment_slideshow" />
+			android:id = "@+id/nav_activity"
+			android:name = "com.github.therealroguewarlock.dirtbud.ui.activity.ActivityFragment"
+			android:label = "Ride activity"
+			tools:layout = "@layout/fragment_activity" />
+
+	<fragment
+		android:id = "@+id/nav_garage"
+		android:name = "com.github.therealroguewarlock.dirtbud.ui.garage.GarageFragment"
+		android:label = "Garage"
+		tools:layout = "@layout/fragment_garage" />
+
+
 </navigation>

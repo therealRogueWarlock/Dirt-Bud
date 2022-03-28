@@ -9,12 +9,19 @@
 				android:icon = "@drawable/ic_menu_camera"
 				android:title = "@string/menu_home" />
 		<item
-				android:id = "@+id/nav_gallery"
+				android:id = "@+id/nav_profile"
 				android:icon = "@drawable/ic_menu_gallery"
-				android:title = "@string/menu_gallery" />
+				android:title = "@string/menu_profile" />
 		<item
-				android:id = "@+id/nav_slideshow"
+				android:id = "@+id/nav_activity"
 				android:icon = "@drawable/ic_menu_slideshow"
-				android:title = "@string/menu_slideshow" />
+				android:title = "@string/menu_ride_activity" />
+
+		<item
+			android:id = "@+id/nav_garage"
+			android:icon = "@drawable/ic_menu_slideshow"
+			android:title = "@string/menu_garage" />
+
 	</group>
+
 </menu>

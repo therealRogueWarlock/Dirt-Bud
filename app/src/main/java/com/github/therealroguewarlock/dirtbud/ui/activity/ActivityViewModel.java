@@ -1,16 +1,16 @@
-package com.github.therealroguewarlock.dirtbud.ui.gallery;
+package com.github.therealroguewarlock.dirtbud.ui.activity;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class ActivityViewModel extends ViewModel {
 
 	private final MutableLiveData<String> mText;
 
-	public GalleryViewModel() {
+	public ActivityViewModel() {
 		mText = new MutableLiveData<>();
-		mText.setValue("This is gallery fragment");
+		mText.setValue("This is the ride activity fragment");
 	}
 
 	public LiveData<String> getText() {
