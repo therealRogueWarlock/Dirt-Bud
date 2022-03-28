@@ -1,5 +1,8 @@
 package com.github.therealroguewarlock.dirtbud.ui.garage;
 
+import android.app.Application;
+
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -11,7 +14,7 @@ import com.github.therealroguewarlock.dirtbud.model.impl.GarageModelImpl;
 
 import java.util.ArrayList;
 
-public class GarageViewModel extends ViewModel {
+public class GarageViewModel extends AndroidViewModel {
 
     private final GarageModel garageModel;
     private MutableLiveData<String> mText;
@@ -19,7 +22,8 @@ public class GarageViewModel extends ViewModel {
     private MutableLiveData<ArrayList<DirtBike>> dirtBikes;
     private MutableLiveData<ArrayList<Part>> partInventory;
 
-    public GarageViewModel() {
+    public GarageViewModel(Application application) {
+        super(application);
         garageModel = new GarageModelImpl();
         
        initLiveData();

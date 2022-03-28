@@ -3,11 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/fragment_garage.xml" value="0.2" />
+        <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/list_card_dirt_bike.xml" value="0.33" />
         <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.224" />
-        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/fragment_garage.xml" value="0.5" />
+        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/fragment_garage.xml" value="0.67" />
         <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/fragment_home.xml" value="0.19326241134751773" />
         <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/fragment_profile.xml" value="0.2695035460992908" />
-        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/list_card_dirt_bike.xml" value="0.49907407407407406" />
         <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/menu/activity_main_drawer.xml" value="0.2484375" />
       </map>
     </option>

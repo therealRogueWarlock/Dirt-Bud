@@ -11,5 +11,9 @@
 	<string name = "menu_garage">Garage</string>
 	<string name="menu_profile">Rider profile</string>
 	<string name="menu_ride_activity">Activity</string>
+	<string name = "brand_placeholder">Brand Placeholder</string>
+	<string name = "displacement_placeholder">Displacement Placeholder</string>
+	<string name = "dirt_bike_displacement_info">"Displacement: "</string>
+	<string name = "dirt_bike_info_brand">"Brand: "</string>
 
 </resources>
