@@ -116,4 +116,12 @@ public class DirtBike {
 	public void setFourStrokeEngine(boolean fourStrokeEngine) {
 		isFourStrokeEngine = fourStrokeEngine;
 	}
+
+	@Override
+	public String toString() {
+		return "DirtBike{" +
+				"brand='" + brand + '\'' +
+				", engineSize=" + engineSize +
+				'}';
+	}
 }

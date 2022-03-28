@@ -1,15 +1,19 @@
 package com.github.therealroguewarlock.dirtbud.ui.garage;
 
+import android.app.Application;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.therealroguewarlock.dirtbud.databinding.FragmentGarageBinding;
 
@@ -33,7 +37,6 @@ public class GarageFragment extends Fragment {
     }
 
 
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -43,5 +46,9 @@ public class GarageFragment extends Fragment {
     private void setLiveDataObservers() {
         TextView garageText = binding.GaragePageText;
         garageViewModel.getText().observe(getViewLifecycleOwner(), garageText::setText);
+
+        RecyclerView dirtBikesListView = binding.DirtBikeRecyclerView;
+        dirtBikesListView.setLayoutManager(new LinearLayoutManager(getContext().getApplicationContext()));
+        dirtBikesListView.setAdapter(new DirtBikeListAdapter(garageViewModel.getDirtBikes().getValue()));
     }
 }
