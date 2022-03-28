@@ -6,8 +6,6 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
-import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBikeWithPart;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 
 @Database(entities = {Part.class}, version = 1)
