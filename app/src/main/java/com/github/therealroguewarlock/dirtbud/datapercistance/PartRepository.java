@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public abstract class PartRepository {
+public class PartRepository {
 	// Singleton
 	private static PartRepository instance;
 	// Database Access
@@ -35,7 +35,10 @@ public abstract class PartRepository {
 	 * @return Instance of Singleton class, Repository
 	 */
 	public static PartRepository getInstance(Context applicationContext) {
-		return null;
+		if (instance == null) {
+			instance = new PartRepository(applicationContext);
+		}
+		return instance;
 	}
 
 	public LiveData<List<Part>> getAllEntities() {
