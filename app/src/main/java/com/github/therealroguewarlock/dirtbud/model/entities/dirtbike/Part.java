@@ -17,7 +17,7 @@ public class Part {
 	private final String colour;
 
 	// Replacement Time
-	private final int hoursUsed;
+	private int hoursUsed;
 
 	public Part(@NotNull String partNumber, @NotNull String partName, String partDescription, String colour, int hoursUsed) {
 		this.partNumber = partNumber;
@@ -59,5 +59,9 @@ public class Part {
 
 	public int getHoursUsed() {
 		return hoursUsed;
+	}
+
+	public void setHoursUsed(int hoursUsed) {
+		this.hoursUsed = hoursUsed;
 	}
 }
