@@ -6,5 +6,4 @@ public class DirtBike {
 
 	private PartList partList; // TODO: Convert to a simple List<Part>?
 
-
 }
