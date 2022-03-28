@@ -46,11 +46,6 @@ public class User {
 		return inventory;
 	}
 
-	// FIXME: Remove this?
-//	public void setUserId(String userId) {
-//		this.userId = userId;
-//	}
-
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}

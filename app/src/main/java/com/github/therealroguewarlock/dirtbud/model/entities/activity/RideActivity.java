@@ -1,6 +1,6 @@
 package com.github.therealroguewarlock.dirtbud.model.entities.activity;
 
-public class RideActivity extends Activity{
+public class RideActivity extends Activity {
 
     private String location;
 

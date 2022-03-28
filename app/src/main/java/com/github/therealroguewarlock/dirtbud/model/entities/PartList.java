@@ -13,6 +13,4 @@ public class PartList {
 		this.parts = new ArrayList<>();
 	}
 
-
-
 }
