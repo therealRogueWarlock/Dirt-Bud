@@ -1,12 +1,9 @@
-package com.github.therealroguewarlock.dirtbud.model.datapercistance;
+package com.github.therealroguewarlock.dirtbud.datapercistance;
 
-import android.app.Application;
-
-import androidx.lifecycle.LiveData;
+import android.content.Context;
 
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -21,9 +18,9 @@ public abstract class DirtBikeRepository {
 	private final ExecutorService executorService;
 
 	// Private Constructor, part of Singleton
-	private DirtBikeRepository(Application application) {
-		DirtBudDatabase database = DirtBudDatabase.getInstance(application);
-		this.dao = database.getDirtBudDAO();
+	private DirtBikeRepository(Context applicationContext) {
+		DirtBudDatabase database = DirtBudDatabase.getInstance(applicationContext);
+		dao = database.getDirtBudDAO();
 //		allEntities = dao.getAllDirtBikes(); // TODO
 		executorService = Executors.newFixedThreadPool(2);
 	}
@@ -31,10 +28,10 @@ public abstract class DirtBikeRepository {
 	/**
 	 * Access to Singleton Class, Repository.
 	 *
-	 * @param application Base Application of the process
+	 * @param applicationContext Base Application of the process
 	 * @return Instance of Singleton class, Repository
 	 */
-	public abstract DirtBikeRepository getInstance(Application application);
+	public abstract DirtBikeRepository getInstance(Context applicationContext);
 
 //	public LiveData<List<DirtBike>> getAllEntities() { // TODO
 //		return allEntities;

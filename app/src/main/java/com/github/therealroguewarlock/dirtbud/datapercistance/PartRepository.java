@@ -1,6 +1,6 @@
-package com.github.therealroguewarlock.dirtbud.model.datapercistance;
+package com.github.therealroguewarlock.dirtbud.datapercistance;
 
-import android.app.Application;
+import android.content.Context;
 
 import androidx.lifecycle.LiveData;
 
@@ -21,9 +21,9 @@ public abstract class PartRepository {
 	private final ExecutorService executorService;
 
 	// Private Constructor, part of Singleton
-	private PartRepository(Application application) {
-		DirtBudDatabase database = DirtBudDatabase.getInstance(application);
-		this.dao = database.getDirtBudDAO();
+	private PartRepository(Context applicationContext) {
+		DirtBudDatabase database = DirtBudDatabase.getInstance(applicationContext);
+		dao = database.getDirtBudDAO();
 		allEntities = dao.getAllParts();
 		executorService = Executors.newFixedThreadPool(2);
 	}
@@ -31,10 +31,12 @@ public abstract class PartRepository {
 	/**
 	 * Access to Singleton Class, Repository.
 	 *
-	 * @param application Base Application of the process
+	 * @param applicationContext Base Application Context of the process
 	 * @return Instance of Singleton class, Repository
 	 */
-	public abstract PartRepository getInstance(Application application);
+	public static PartRepository getInstance(Context applicationContext) {
+		return null;
+	}
 
 	public LiveData<List<Part>> getAllEntities() {
 		return allEntities;
@@ -52,7 +54,7 @@ public abstract class PartRepository {
 	/**
 	 * Removes all Phrases in the local Storage
 	 */
-	public void deleteAllPhrases() {
+	public void deleteAllParts() {
 		executorService.execute(dao::deleteAllParts);
 	}
 
@@ -61,7 +63,7 @@ public abstract class PartRepository {
 	 *
 	 * @param updatedPart Updated Part. Part with Matching ID will be updated
 	 */
-	public void updatePhrase(Part updatedPart) {
+	public void updatePart(Part updatedPart) {
 		executorService.execute(() -> dao.update(updatedPart));
 	}
 }
