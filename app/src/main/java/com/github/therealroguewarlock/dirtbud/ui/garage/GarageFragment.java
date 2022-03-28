@@ -44,9 +44,6 @@ public class GarageFragment extends Fragment {
     }
 
     private void setLiveDataObservers() {
-        TextView garageText = binding.GaragePageText;
-        garageViewModel.getText().observe(getViewLifecycleOwner(), garageText::setText);
-
         RecyclerView dirtBikesListView = binding.DirtBikeRecyclerView;
         dirtBikesListView.setLayoutManager(new LinearLayoutManager(getContext().getApplicationContext()));
         dirtBikesListView.setAdapter(new DirtBikeListAdapter(garageViewModel.getDirtBikes().getValue()));
