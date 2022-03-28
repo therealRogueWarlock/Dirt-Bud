@@ -1,4 +1,4 @@
-package com.github.therealroguewarlock.dirtbud.model.datapercistance;
+package com.github.therealroguewarlock.dirtbud.datapercistance;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -8,7 +8,6 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 
 import java.util.List;

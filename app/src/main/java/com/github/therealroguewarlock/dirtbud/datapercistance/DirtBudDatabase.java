@@ -1,4 +1,4 @@
-package com.github.therealroguewarlock.dirtbud.model.datapercistance;
+package com.github.therealroguewarlock.dirtbud.datapercistance;
 
 import android.content.Context;
 
@@ -14,9 +14,9 @@ public abstract class DirtBudDatabase extends RoomDatabase {
 
 	public abstract DirtBudDAO getDirtBudDAO();
 
-	public static synchronized DirtBudDatabase getInstance(Context context) {
+	public static synchronized DirtBudDatabase getInstance(Context applicationContext) {
 		if (instance == null) {
-			instance = Room.databaseBuilder(context.getApplicationContext(), DirtBudDatabase.class, "dirt_bud_database").fallbackToDestructiveMigration().build();
+			instance = Room.databaseBuilder(applicationContext, DirtBudDatabase.class, "dirt_bud_database").fallbackToDestructiveMigration().build();
 		}
 		return instance;
 	}
