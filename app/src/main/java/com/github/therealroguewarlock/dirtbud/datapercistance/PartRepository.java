@@ -35,7 +35,7 @@ public abstract class PartRepository {
 	 * @return Instance of Singleton class, Repository
 	 */
 	public static PartRepository getInstance(Context applicationContext) {
-		return null;
+		return instance;
 	}
 
 	public LiveData<List<Part>> getAllEntities() {
