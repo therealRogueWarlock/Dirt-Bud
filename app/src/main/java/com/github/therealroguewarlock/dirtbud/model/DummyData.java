@@ -3,35 +3,53 @@ package com.github.therealroguewarlock.dirtbud.model;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class DummyData {
+	private final int MAX_DUMMY_DATA = 100;
 
+	public ArrayList<DirtBike> getDirtBikes() {
 
-    public ArrayList<DirtBike> getDirtBikes() {
+		ArrayList<DirtBike> dummyDirtBikes = new ArrayList<>();
 
+		dummyDirtBikes.add(new DirtBike("Yamaha", 125, 125, 150, 120, 19, 115, getInventory(), false));
+		dummyDirtBikes.add(new DirtBike("KTM", 250, 250, 150, 130, 19, 115, getInventory(), true));
+		dummyDirtBikes.add(new DirtBike("GASGAS", 450, 250, 150, 125, 21, 120, getInventory(), true));
 
-        ArrayList<DirtBike> dummyDirtBikes = new ArrayList<>();
+		Random r = new Random();
+		byte[] chars = new byte[7];
+		for (int i = 0; i < MAX_DUMMY_DATA; i++) {
+			r.nextBytes(chars);
+			dummyDirtBikes.add(
+					new DirtBike(
+							new String(chars, StandardCharsets.US_ASCII),
+					100 + r.nextInt(300),
+					50 + r.nextInt(300),
+					100 + r.nextInt(80),
+					150 + r.nextInt(40),
+					120 + r.nextInt(50),
+					80 + r.nextInt(40),
+					getInventory(),
+					r.nextBoolean()
+					)
+			);
+		}
 
-        dummyDirtBikes.add(new DirtBike("Yamaha", 125,125,150,120,19,115, getInventory(), false));
-        dummyDirtBikes.add(new DirtBike("KTM", 250,250,150,130,19,115, getInventory(), true));
-        dummyDirtBikes.add(new DirtBike("GASGAS", 450,250,150,125,21,120, getInventory(), true));
+		return dummyDirtBikes;
+	}
 
+	public ArrayList<Part> getInventory() {
+		ArrayList<Part> dummyParts = new ArrayList<>();
 
-        return dummyDirtBikes;
-    }
+		dummyParts.add(new Part("m213", "piston", "The pistion in the motor", "metal", 12));
+		dummyParts.add(new Part("m321", "clutch", "good clutch", "metal", 80));
+		dummyParts.add(new Part("m513", "foot peck", "what you stand on", "metal", 70));
+		dummyParts.add(new Part("m7613", "valves", "the valves in the motor", "metal", 50));
 
-
-    public ArrayList<Part> getInventory() {
-        ArrayList<Part> dummyParts = new ArrayList<>();
-
-        dummyParts.add(new Part("m213", "piston", "The pistion in the motor", "metal", 12));
-        dummyParts.add(new Part("m321", "clutch", "good clutch", "metal", 80));
-        dummyParts.add(new Part("m513", "foot peck", "what you stand on", "metal", 70));
-        dummyParts.add(new Part("m7613", "valves", "the valves in the motor", "metal", 50));
-
-
-        return dummyParts;
-    }
+		return dummyParts;
+	}
 
 }
