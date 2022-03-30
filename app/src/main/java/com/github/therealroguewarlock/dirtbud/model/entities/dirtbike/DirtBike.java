@@ -1,10 +1,9 @@
 package com.github.therealroguewarlock.dirtbud.model.entities.dirtbike;
 
 import androidx.annotation.NonNull;
+import androidx.room.Embedded;
 import androidx.room.Entity;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
-import androidx.room.Relation;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -24,10 +23,11 @@ public class DirtBike {
 	private int wheelSize;
 	private int weight;
 	@NotNull
-	private final List<Part> partList; // FIXME: What the hell do we do here? Ask Kasper
+	@Embedded
+	private final ArrayList<Part> partList; // FIXME: What the hell do we do here? Ask Kasper
 	private boolean isFourStrokeEngine;
 
-	public DirtBike(String brand, int displacement, int engineSize, int rideHeight, int forkHeight, int wheelSize, int weight, List<Part> partList, boolean isFourStrokeEngine) {
+	public DirtBike(String brand, int displacement, int engineSize, int rideHeight, int forkHeight, int wheelSize, int weight, ArrayList<Part> partList, boolean isFourStrokeEngine) {
 		this.brand = (brand == null) ? "Brand Not Set" : brand;
 		this.displacement = displacement;
 		this.engineSize = engineSize;
@@ -47,12 +47,12 @@ public class DirtBike {
 		this.dirtBikeId = dirtBikeId;
 	}
 
-	@NonNull
+	@NotNull
 	public String getBrand() {
 		return brand;
 	}
 
-	public void setBrand(@NonNull String brand) {
+	public void setBrand(@NotNull String brand) {
 		this.brand = brand;
 	}
 
@@ -104,8 +104,8 @@ public class DirtBike {
 		this.weight = weight;
 	}
 
-	@NonNull
-	public List<Part> getPartList() {
+	@NotNull
+	public ArrayList<Part> getPartList() {
 		return partList;
 	}
 
@@ -117,11 +117,9 @@ public class DirtBike {
 		isFourStrokeEngine = fourStrokeEngine;
 	}
 
+	@NonNull
 	@Override
 	public String toString() {
-		return "DirtBike{" +
-				"brand='" + brand + '\'' +
-				", engineSize=" + engineSize +
-				'}';
+		return "DirtBike{" + "brand='" + brand + '\'' + ", engineSize=" + engineSize + '}';
 	}
 }
