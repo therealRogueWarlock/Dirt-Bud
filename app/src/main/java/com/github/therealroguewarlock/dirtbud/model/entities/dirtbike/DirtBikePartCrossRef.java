@@ -6,5 +6,4 @@ import androidx.room.Entity;
 public class DirtBikePartCrossRef {
 	public int dirtBikeId;
 	public int partId;
-	public int amount;
 }
