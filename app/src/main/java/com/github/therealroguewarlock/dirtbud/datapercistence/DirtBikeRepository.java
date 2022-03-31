@@ -1,4 +1,4 @@
-package com.github.therealroguewarlock.dirtbud.datapercistance;
+package com.github.therealroguewarlock.dirtbud.datapercistence;
 
 import android.content.Context;
 
