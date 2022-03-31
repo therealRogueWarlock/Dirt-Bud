@@ -1,14 +1,10 @@
 package com.github.therealroguewarlock.dirtbud.model.entities.dirtbike;
 
 import androidx.annotation.NonNull;
-import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity(tableName = "dirt_bike_table")
 public class DirtBike {
@@ -22,12 +18,9 @@ public class DirtBike {
 	private int forkHeight;
 	private int wheelSize;
 	private int weight;
-	@NotNull
-	@Embedded
-	private final ArrayList<Part> partList; // FIXME: What the hell do we do here? Ask Kasper
 	private boolean isFourStrokeEngine;
 
-	public DirtBike(String brand, int displacement, int engineSize, int rideHeight, int forkHeight, int wheelSize, int weight, ArrayList<Part> partList, boolean isFourStrokeEngine) {
+	public DirtBike(String brand, int displacement, int engineSize, int rideHeight, int forkHeight, int wheelSize, int weight, boolean isFourStrokeEngine) {
 		this.brand = (brand == null) ? "Brand Not Set" : brand;
 		this.displacement = displacement;
 		this.engineSize = engineSize;
@@ -35,7 +28,6 @@ public class DirtBike {
 		this.forkHeight = forkHeight;
 		this.wheelSize = wheelSize;
 		this.weight = weight;
-		this.partList = (partList == null) ? new ArrayList<>() : partList;
 		this.isFourStrokeEngine = isFourStrokeEngine;
 	}
 
@@ -102,11 +94,6 @@ public class DirtBike {
 
 	public void setWeight(int weight) {
 		this.weight = weight;
-	}
-
-	@NotNull
-	public ArrayList<Part> getPartList() {
-		return partList;
 	}
 
 	public boolean isFourStrokeEngine() {
