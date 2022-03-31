@@ -18,16 +18,23 @@
 			tools:layout = "@layout/fragment_profile" />
 
 	<fragment
+		android:id = "@+id/nav_activity"
+		android:name = "com.github.therealroguewarlock.dirtbud.ui.activity.ActivityFragment"
+		android:label = "Activity"
+		tools:layout = "@layout/fragment_activity" />
+
+
+	<fragment
 			android:id = "@+id/nav_dirt_bike_list"
 			android:name = "com.github.therealroguewarlock.dirtbud.ui.garage.dirtbikelist.DirtBikeListFragment"
-			android:label = "Ride activity"
+			android:label = "Dirt bikes"
 			tools:layout = "@layout/fragment_dirt_bike_list" />
 
 	<fragment
 		android:id = "@+id/nav_inventory"
-		android:name = "com.github.therealroguewarlock.dirtbud.ui.garage."
-		android:label = "Garage"
-		tools:layout = "@layout/fragment_dirt_bike_list" />
+		android:name = "com.github.therealroguewarlock.dirtbud.ui.garage.inventory.InventoryFragment"
+		android:label = "Part Inventory"
+		tools:layout = "@layout/fragment_inventory" />
 
 
 </navigation>
