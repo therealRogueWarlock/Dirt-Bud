@@ -43,6 +43,9 @@ public class DirtBikeListFragment extends Fragment {
     private void setLiveDataObservers() {
         RecyclerView dirtBikesListView = binding.DirtBikeRecyclerView;
         dirtBikesListView.setLayoutManager(new LinearLayoutManager(getContext().getApplicationContext()));
-        dirtBikesListView.setAdapter(new DirtBikeListAdapter(dirtBikeListViewModel.getDirtBikes().getValue()));
+
+        DirtBikeListAdapter listAdapter = new DirtBikeListAdapter();
+        dirtBikeListViewModel.getDirtBikes().observe(getViewLifecycleOwner(), listAdapter::setBikeList);
+        dirtBikesListView.setAdapter(listAdapter);
     }
 }

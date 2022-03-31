@@ -5,7 +5,6 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
 import com.github.therealroguewarlock.dirtbud.model.GarageModel;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
@@ -13,47 +12,46 @@ import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 import com.github.therealroguewarlock.dirtbud.model.impl.GarageModelImpl;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DirtBikeListViewModel extends AndroidViewModel {
 
-    private final GarageModel garageModel;
-    private MutableLiveData<String> mText;
-    
-    private MutableLiveData<ArrayList<DirtBike>> dirtBikes;
-    private MutableLiveData<ArrayList<Part>> partInventory;
+	private final GarageModel garageModel;
+	private MutableLiveData<String> mText;
 
-    public DirtBikeListViewModel(Application application) {
-        super(application);
-        garageModel = new GarageModelImpl();
-        
-       initLiveData();
-    }
+	private LiveData<List<DirtBike>> dirtBikes;
+	private MutableLiveData<ArrayList<Part>> partInventory;
 
-    public LiveData<String> getText() {
-        return mText;
-    }
+	public DirtBikeListViewModel(Application application) {
+		super(application);
+		garageModel = new GarageModelImpl(application.getApplicationContext());
 
-    public MutableLiveData<ArrayList<DirtBike>> getDirtBikes() {
-        return dirtBikes;
-    }
+		initLiveData();
+	}
 
-    public MutableLiveData<ArrayList<Part>> getPartInventory() {
-        return partInventory;
-    }
+	public LiveData<String> getText() {
+		return mText;
+	}
 
+	public LiveData<List<DirtBike>> getDirtBikes() {
+		return dirtBikes;
+	}
 
-    private void initLiveData(){
-        // TODO: Remove test text
-        mText = new MutableLiveData<>();
-        mText.setValue("This is the garage my dude");
+	public MutableLiveData<ArrayList<Part>> getPartInventory() {
+		return partInventory;
+	}
 
-        // load dirt bike data into live data
-        dirtBikes = new MutableLiveData<>();
-        dirtBikes.setValue(garageModel.getDirtBikes());
+	private void initLiveData() {
+		// TODO: Remove test text
+		mText = new MutableLiveData<>();
+		mText.setValue("This is the garage my dude");
 
-        partInventory = new MutableLiveData<>();
-        partInventory.setValue(garageModel.getInventory());
+		// load dirt bike data into live data
+		dirtBikes = garageModel.getDirtBikes();
 
-    }
+		partInventory = new MutableLiveData<>();
+		partInventory.setValue(garageModel.getInventory());
+
+	}
 
 }

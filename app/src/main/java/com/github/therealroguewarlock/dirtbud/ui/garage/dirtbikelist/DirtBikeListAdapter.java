@@ -1,6 +1,7 @@
 package com.github.therealroguewarlock.dirtbud.ui.garage.dirtbikelist;
 
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,14 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.github.therealroguewarlock.dirtbud.R;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapter.ViewHolder> {
-	private final List<DirtBike> dirtBikeList;
-
-	public DirtBikeListAdapter(List<DirtBike> dirtBikeList) {
-		this.dirtBikeList = dirtBikeList;
-	}
+	private List<DirtBike> dirtBikeList = new ArrayList<>();
 
 	@NonNull
 	@Override
@@ -38,17 +36,19 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 	}
 
 	private int funColor(int seed) {
-		return Color.argb(
-				(seed * dirtBikeList.size() * 20) % 100,
-				(seed * 32 + dirtBikeList.size() * dirtBikeList.size()) % 255,
-				(((seed % 4) == 0) ? 18 : (((seed % 3) == 0) ? seed : ((32 * 48) + 20))) % 255,
-				(seed * 196) % 255
-		);
+		return Color.argb((seed * dirtBikeList.size() * 20) % 100, (seed * 32 + dirtBikeList.size() * dirtBikeList.size()) % 255, (((seed % 4) == 0) ? 18 : (((seed % 3) == 0) ? seed : ((32 * 48) + 20))) % 255, (seed * 196) % 255);
 	}
 
 	@Override
 	public int getItemCount() {
 		return dirtBikeList.size();
+	}
+
+	public void setBikeList(List<DirtBike> dirtBikes) {
+		// TODO: Check if this is needed later, or if it causes issues
+		Log.d("NEWBIKELIST", "A new Bike List has been sent to Garage | " + dirtBikes);
+		dirtBikeList = (dirtBikes == null) ? new ArrayList<>() : dirtBikes;
+		notifyDataSetChanged();
 	}
 
 	public class ViewHolder extends RecyclerView.ViewHolder {

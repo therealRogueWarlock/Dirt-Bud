@@ -8,30 +8,31 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 
 import java.util.List;
 
 @Dao
 public interface DirtBudDAO {
-//	// DirtBike
-//	@Insert(onConflict = OnConflictStrategy.ABORT,entity = DirtBike.class)
-//	void insert(DirtBike dirtBike);
-//
-//	@Update(onConflict = OnConflictStrategy.ABORT,entity = DirtBike.class)
-//	void update(DirtBike dirtBike);
-//
-//	@Delete()
-//	void delete(DirtBike dirtBike);
-//
-//	@Query("DELETE FROM dirt_bike_table")
-//	void deleteAllDirtBikes();
-//
-//	@Query("SELECT * FROM dirt_bike_table")
-//	LiveData<List<DirtBike>> getAllDirtBikes();
-//
-//	@Query("SELECT * FROM dirt_bike_table WHERE dirtBikeId = :dirtBikeId")
-//	DirtBike getDirtBike(int dirtBikeId);
+	// DirtBike
+	@Insert(onConflict = OnConflictStrategy.ABORT,entity = DirtBike.class)
+	void insert(DirtBike dirtBike);
+
+	@Update(onConflict = OnConflictStrategy.ABORT,entity = DirtBike.class)
+	void update(DirtBike dirtBike);
+
+	@Delete()
+	void delete(DirtBike dirtBike);
+
+	@Query("DELETE FROM dirt_bike_table")
+	void deleteAllDirtBikes();
+
+	@Query("SELECT * FROM dirt_bike_table")
+	LiveData<List<DirtBike>> getAllDirtBikes();
+
+	@Query("SELECT * FROM dirt_bike_table WHERE dirtBikeId = :dirtBikeId")
+	DirtBike getDirtBike(int dirtBikeId);
 
 	// Part
 	@Insert(onConflict = OnConflictStrategy.ABORT, entity = Part.class)
