@@ -1,7 +1,6 @@
 package com.github.therealroguewarlock.dirtbud.ui.garage.dirtbikelist;
 
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,8 +51,6 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 	}
 
 	public void setBikeList(List<DirtBike> dirtBikes) {
-		// TODO: Check if this is needed later, or if it causes issues
-		Log.d("NEWBIKELIST", "A new Bike List has been sent to Garage | " + dirtBikes);
 		dirtBikeList = (dirtBikes == null) ? new ArrayList<>() : dirtBikes;
 		notifyDataSetChanged();
 	}
