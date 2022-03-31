@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Dirt Bud"
 include ':app'
-
