@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 		NavigationView navigationView = binding.navView;
 		// Passing each menu ID as a set of Ids because each
 		// menu should be considered as top level destinations.
-		mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_profile, R.id.nav_activity, R.id.nav_garage).setOpenableLayout(drawer).build();
+		mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_profile, R.id.nav_activity, R.id.nav_dirt_bike_list, R.id.nav_inventory).setOpenableLayout(drawer).build();
 		NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
 		NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 		NavigationUI.setupWithNavController(navigationView, navController);
