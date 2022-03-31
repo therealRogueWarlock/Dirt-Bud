@@ -3,20 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/fragment_admin_parts.xml" value="0.38822303282959875" />
+        <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/fragment_dirt_bike_list.xml" value="0.1" />
+        <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/fragment_garage.xml" value="0.2" />
+        <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/fragment_inventory.xml" value="0.1867007672634271" />
+        <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/list_card_dirt_bike.xml" value="0.33" />
+        <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/list_card_dirt_bike_part.xml" value="0.33" />
         <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.224" />
-        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/activity_main.xml" value="0.21422101449275363" />
-        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/app_bar_main.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/content_main.xml" value="0.2749094202898551" />
-        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/fragment_dirt_bike_list.xml" value="0.31354166666666666" />
-        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/fragment_garage.xml" value="0.25" />
+        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/fragment_garage.xml" value="0.67" />
         <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/fragment_home.xml" value="0.19326241134751773" />
-        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/fragment_inventory.xml" value="0.2749094202898551" />
         <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/fragment_profile.xml" value="0.2695035460992908" />
-        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/list_card.xml" value="0.31354166666666666" />
-        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/list_card_dirt_bike.xml" value="0.49907407407407406" />
         <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/menu/activity_main_drawer.xml" value="0.2484375" />
-        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/menu/bottom_nav_menu_garage.xml" value="0.67" />
-        <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/menu/main.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

@@ -2,24 +2,32 @@ package com.github.therealroguewarlock.dirtbud.ui.garage.inventory;
 
 import android.app.Application;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.LiveData;
 
-import com.github.therealroguewarlock.dirtbud.databinding.ActivityMainBinding;
 import com.github.therealroguewarlock.dirtbud.model.GarageModel;
+import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 import com.github.therealroguewarlock.dirtbud.model.impl.GarageModelImpl;
+
+import java.util.List;
 
 public class InventoryViewModel extends AndroidViewModel {
 
-    private final GarageModel garageModel;
+	private final GarageModel garageModel;
+	private LiveData<List<Part>> parts;
 
+	public InventoryViewModel(Application application) {
+		super(application);
+		garageModel = new GarageModelImpl(application);
 
-    public InventoryViewModel(Application application) {
-        super(application);
-        garageModel = new GarageModelImpl(application);
+		initLiveData();
+	}
 
-    }
+	public LiveData<List<Part>> getParts() {
+		return parts;
+	}
 
-
+	private void initLiveData() {
+		parts = garageModel.getInventory();
+	}
 }

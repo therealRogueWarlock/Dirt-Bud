@@ -31,11 +31,11 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 	@Override
 	public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 		// Brand
-		holder.headerDirtBikeBrand.setText(R.string.card_info_brand);
+		holder.headerDirtBikeBrand.setText(R.string.card_info_bike_brand);
 		holder.textDirtBikeBrand.setText(dirtBikeList.get(position).getBrand());
 
 		// Displacement
-		holder.headerDirtBikeDisplacement.setText(R.string.card_info_displacement);
+		holder.headerDirtBikeDisplacement.setText(R.string.card_info_bike_displacement);
 		holder.textDirtBikeDisplacement.setText(String.valueOf(dirtBikeList.get(position).getDisplacement()));
 
 		// Image

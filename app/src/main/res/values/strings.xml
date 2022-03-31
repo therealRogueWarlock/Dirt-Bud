@@ -18,7 +18,9 @@
 	<string name = "card_text_one_placeholder">TEXT ONE</string>
 	<string name = "card_header_two_placeholder">HEADER TWO</string>
 	<string name = "card_text_two_placeholder">TEXT TWO</string>
-	<string name = "card_info_brand">Brand</string>
-	<string name = "card_info_displacement">Displacement</string>
+	<string name = "card_info_bike_brand">Brand</string>
+	<string name = "card_info_bike_displacement">Displacement</string>
+	<string name="card_info_part_number">Part No</string>
+	<string name="card_info_part_name">Part Name</string>
 
 </resources>

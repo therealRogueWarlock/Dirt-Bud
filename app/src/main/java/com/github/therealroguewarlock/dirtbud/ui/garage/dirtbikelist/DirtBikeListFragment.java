@@ -16,36 +16,33 @@ import com.github.therealroguewarlock.dirtbud.databinding.FragmentDirtBikeListBi
 
 public class DirtBikeListFragment extends Fragment {
 
-    private FragmentDirtBikeListBinding binding;
+	private FragmentDirtBikeListBinding binding;
+	private DirtBikeListViewModel viewModel;
 
-    private DirtBikeListViewModel dirtBikeListViewModel;
+	@Nullable
+	@Override
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		viewModel = new ViewModelProvider(this).get(DirtBikeListViewModel.class);
+		binding = FragmentDirtBikeListBinding.inflate(inflater, container, false);
+		View root = binding.getRoot();
 
+		setLiveDataObservers();
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        dirtBikeListViewModel = new ViewModelProvider(this).get(DirtBikeListViewModel.class);
-        binding = FragmentDirtBikeListBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+		return root;
+	}
 
-        setLiveDataObservers();
+	@Override
+	public void onDestroyView() {
+		super.onDestroyView();
+		binding = null;
+	}
 
-        return root;
-    }
+	private void setLiveDataObservers() {
+		RecyclerView dirtBikeListView = binding.DirtBikeRecyclerView;
+		dirtBikeListView.setLayoutManager(new LinearLayoutManager(getContext().getApplicationContext()));
 
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
-
-    private void setLiveDataObservers() {
-        RecyclerView dirtBikesListView = binding.DirtBikeRecyclerView;
-        dirtBikesListView.setLayoutManager(new LinearLayoutManager(getContext().getApplicationContext()));
-
-        DirtBikeListAdapter listAdapter = new DirtBikeListAdapter();
-        dirtBikeListViewModel.getDirtBikes().observe(getViewLifecycleOwner(), listAdapter::setBikeList);
-        dirtBikesListView.setAdapter(listAdapter);
-    }
+		DirtBikeListAdapter listAdapter = new DirtBikeListAdapter();
+		viewModel.getDirtBikes().observe(getViewLifecycleOwner(), listAdapter::setBikeList);
+		dirtBikeListView.setAdapter(listAdapter);
+	}
 }
