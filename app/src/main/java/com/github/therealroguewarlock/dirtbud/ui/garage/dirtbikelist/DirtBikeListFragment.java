@@ -1,12 +1,9 @@
-package com.github.therealroguewarlock.dirtbud.ui.garage;
+package com.github.therealroguewarlock.dirtbud.ui.garage.dirtbikelist;
 
-import android.app.Application;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,20 +12,20 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.github.therealroguewarlock.dirtbud.databinding.FragmentGarageBinding;
+import com.github.therealroguewarlock.dirtbud.databinding.FragmentDirtBikeListBinding;
 
-public class GarageFragment extends Fragment {
+public class DirtBikeListFragment extends Fragment {
 
-    private FragmentGarageBinding binding;
+    private FragmentDirtBikeListBinding binding;
 
-    private GarageViewModel garageViewModel;
+    private DirtBikeListViewModel dirtBikeListViewModel;
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        garageViewModel = new ViewModelProvider(this).get(GarageViewModel.class);
-        binding = FragmentGarageBinding.inflate(inflater, container, false);
+        dirtBikeListViewModel = new ViewModelProvider(this).get(DirtBikeListViewModel.class);
+        binding = FragmentDirtBikeListBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         setLiveDataObservers();
@@ -46,6 +43,6 @@ public class GarageFragment extends Fragment {
     private void setLiveDataObservers() {
         RecyclerView dirtBikesListView = binding.DirtBikeRecyclerView;
         dirtBikesListView.setLayoutManager(new LinearLayoutManager(getContext().getApplicationContext()));
-        dirtBikesListView.setAdapter(new DirtBikeListAdapter(garageViewModel.getDirtBikes().getValue()));
+        dirtBikesListView.setAdapter(new DirtBikeListAdapter(dirtBikeListViewModel.getDirtBikes().getValue()));
     }
 }

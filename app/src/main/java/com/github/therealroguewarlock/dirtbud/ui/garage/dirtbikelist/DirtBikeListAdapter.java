@@ -1,4 +1,4 @@
-package com.github.therealroguewarlock.dirtbud.ui.garage;
+package com.github.therealroguewarlock.dirtbud.ui.garage.dirtbikelist;
 
 import android.graphics.Color;
 import android.view.LayoutInflater;
