@@ -24,7 +24,7 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 	@Override
 	public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 		LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-		View view = inflater.inflate(R.layout.list_card_dirt_bike, parent, false);
+		View view = inflater.inflate(R.layout.list_card, parent, false);
 		return new ViewHolder(view);
 	}
 
