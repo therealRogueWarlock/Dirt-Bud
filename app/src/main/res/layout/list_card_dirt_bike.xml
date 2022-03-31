@@ -17,9 +17,9 @@
 				android:layout_height = "wrap_content"
 				android:text = "@string/card_header_one_placeholder"
 				android:textStyle = "bold"
-				app:layout_constraintStart_toStartOf = "@+id/text_box_one"
+				app:layout_constraintStart_toStartOf = "@id/text_box_one"
 				app:layout_constraintTop_toTopOf = "parent"
-				app:layout_constraintBottom_toTopOf = "@+id/text_box_one"
+				app:layout_constraintBottom_toTopOf = "@id/text_box_one"
 				app:layout_constraintVertical_chainStyle = "packed" />
 
 		<TextView
@@ -30,7 +30,7 @@
 				app:layout_constraintBottom_toBottomOf = "parent"
 				app:layout_constraintStart_toStartOf = "parent"
 				android:layout_marginStart = "16dp"
-				app:layout_constraintTop_toBottomOf = "@+id/header_one" />
+				app:layout_constraintTop_toBottomOf = "@id/header_one" />
 
 		<TextView
 				android:id = "@+id/header_two"
@@ -38,8 +38,8 @@
 				android:layout_height = "wrap_content"
 				android:text = "@string/card_header_two_placeholder"
 				android:textStyle = "bold"
-				app:layout_constraintBottom_toTopOf = "@+id/text_box_two"
-				app:layout_constraintStart_toStartOf = "@+id/text_box_two"
+				app:layout_constraintBottom_toTopOf = "@id/text_box_two"
+				app:layout_constraintStart_toStartOf = "@id/text_box_two"
 				app:layout_constraintTop_toTopOf = "parent"
 				app:layout_constraintVertical_chainStyle = "packed" />
 
@@ -49,8 +49,8 @@
 				android:layout_height = "wrap_content"
 				android:text = "@string/card_text_two_placeholder"
 				app:layout_constraintBottom_toBottomOf = "parent"
-				app:layout_constraintTop_toBottomOf = "@+id/header_two"
-				app:layout_constraintStart_toStartOf = "@+id/guideline2" />
+				app:layout_constraintTop_toBottomOf = "@id/header_two"
+				app:layout_constraintStart_toStartOf = "@id/guideline" />
 
 		<androidx.cardview.widget.CardView
 				android:id = "@+id/card_img_wrapper"
@@ -72,9 +72,9 @@
 		</androidx.cardview.widget.CardView>
 
 		<androidx.constraintlayout.widget.Guideline
+				android:id = "@+id/guideline"
 				android:layout_width = "wrap_content"
 				android:layout_height = "wrap_content"
-				android:id = "@+id/guideline2"
 				app:layout_constraintGuide_begin = "110dp"
 				android:orientation = "vertical" />
 
