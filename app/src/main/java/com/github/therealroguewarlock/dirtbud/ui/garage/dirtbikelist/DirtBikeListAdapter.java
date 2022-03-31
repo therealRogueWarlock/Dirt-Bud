@@ -1,7 +1,6 @@
 package com.github.therealroguewarlock.dirtbud.ui.garage.dirtbikelist;
 
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.therealroguewarlock.dirtbud.R;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
-import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,15 +39,6 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 
 		// Image
 		holder.imgDirtBike.setBackgroundColor(funColor(position));
-
-		// FIXME: DEBUGGING
-		StringBuilder sb = new StringBuilder();
-		List<Part> _partList = dirtBikeList.get(position).getPartList();
-		for (Part part : _partList) {
-			sb.append(part).append(", ");
-		}
-		Log.d("BIKEPARTLIST", sb.toString());
-		// !FIXME
 	}
 
 	private int funColor(int seed) {

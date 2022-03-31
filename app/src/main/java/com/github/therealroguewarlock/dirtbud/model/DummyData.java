@@ -3,7 +3,6 @@ package com.github.therealroguewarlock.dirtbud.model;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Random;
@@ -15,9 +14,9 @@ public class DummyData {
 
 		ArrayList<DirtBike> dummyDirtBikes = new ArrayList<>();
 
-		dummyDirtBikes.add(new DirtBike("Yamaha", 125, 125, 150, 120, 19, 115, getInventory(), false));
-		dummyDirtBikes.add(new DirtBike("KTM", 250, 250, 150, 130, 19, 115, getInventory(), true));
-		dummyDirtBikes.add(new DirtBike("GASGAS", 450, 250, 150, 125, 21, 120, getInventory(), true));
+		dummyDirtBikes.add(new DirtBike("Yamaha", 125, 125, 150, 120, 19, 115, false));
+		dummyDirtBikes.add(new DirtBike("KTM", 250, 250, 150, 130, 19, 115, true));
+		dummyDirtBikes.add(new DirtBike("GASGAS", 450, 250, 150, 125, 21, 120, true));
 
 		Random r = new Random();
 		byte[] chars = new byte[7];
@@ -31,9 +30,7 @@ public class DummyData {
 					100 + r.nextInt(80),
 					150 + r.nextInt(40),
 					120 + r.nextInt(50),
-					80 + r.nextInt(40),
-					getInventory(),
-					r.nextBoolean()
+					80 + r.nextInt(40), r.nextBoolean()
 					)
 			);
 		}
