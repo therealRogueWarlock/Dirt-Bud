@@ -7,13 +7,18 @@
 	<string name = "nav_header_desc">Navigation header</string>
 	<string name = "action_settings">Settings</string>
 
+	<!-- Navigation -->
 	<string name = "menu_home">Home</string>
 	<string name = "menu_garage">Garage</string>
-	<string name="menu_profile">Rider profile</string>
-	<string name="menu_ride_activity">Activity</string>
-	<string name = "brand_placeholder">Brand Placeholder</string>
-	<string name = "displacement_placeholder">Displacement Placeholder</string>
-	<string name = "dirt_bike_displacement_info">"Displacement: "</string>
-	<string name = "dirt_bike_info_brand">"Brand: "</string>
+	<string name = "menu_profile">Rider profile</string>
+	<string name = "menu_ride_activity">Activity</string>
+
+	<!-- List Cards -->
+	<string name = "card_header_one_placeholder">HEADER ONE</string>
+	<string name = "card_text_one_placeholder">TEXT ONE</string>
+	<string name = "card_header_two_placeholder">HEADER TWO</string>
+	<string name = "card_text_two_placeholder">TEXT TWO</string>
+	<string name = "card_info_brand">Brand</string>
+	<string name = "card_info_displacement">Displacement</string>
 
 </resources>
