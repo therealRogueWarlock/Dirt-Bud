@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.therealroguewarlock.dirtbud.databinding.FragmentDirtBikeListBinding;
+import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 
 public class DirtBikeListFragment extends Fragment {
 
@@ -41,8 +43,16 @@ public class DirtBikeListFragment extends Fragment {
 		RecyclerView dirtBikeListView = binding.DirtBikeRecyclerView;
 		dirtBikeListView.setLayoutManager(new LinearLayoutManager(getContext().getApplicationContext()));
 
+		// Recycler View Adapter
 		DirtBikeListAdapter listAdapter = new DirtBikeListAdapter();
 		viewModel.getDirtBikes().observe(getViewLifecycleOwner(), listAdapter::setBikeList);
+		listAdapter.setOnClickListener(this::dirtBikeClicked);
 		dirtBikeListView.setAdapter(listAdapter);
+	}
+
+	private void dirtBikeClicked(DirtBike dirtBike) {
+		Toast.makeText(getContext().getApplicationContext(), "DirtBike: " + dirtBike.getBrand(), Toast.LENGTH_SHORT).show();
+		// TODO: Implement navigation from here, to a View with information about the DirtBike, including a list of all the parts it has
+
 	}
 }

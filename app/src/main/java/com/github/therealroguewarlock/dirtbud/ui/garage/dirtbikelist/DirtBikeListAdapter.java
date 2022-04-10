@@ -18,6 +18,7 @@ import java.util.List;
 
 public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapter.ViewHolder> {
 	private List<DirtBike> dirtBikeList = new ArrayList<>();
+	private OnClickListener listener;
 
 	@NonNull
 	@Override
@@ -59,6 +60,10 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 		notifyDataSetChanged();
 	}
 
+	public void setOnClickListener(OnClickListener listener){
+		this.listener = listener;
+	}
+
 	/**
 	 * =============
 	 * <br>
@@ -80,6 +85,12 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 			textDirtBikeBrand = itemView.findViewById(R.id.text_box_one);
 			textDirtBikeDisplacement = itemView.findViewById(R.id.text_box_two);
 			imgDirtBike = itemView.findViewById(R.id.img_dirt_bike);
+
+			itemView.setOnClickListener(view -> listener.onClick(dirtBikeList.get(getBindingAdapterPosition())));
 		}
+	}
+
+	interface OnClickListener {
+		void onClick(DirtBike dirtBike);
 	}
 }
