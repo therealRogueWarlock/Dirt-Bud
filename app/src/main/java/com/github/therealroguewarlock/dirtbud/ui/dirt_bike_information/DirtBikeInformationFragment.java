@@ -10,26 +10,28 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.github.therealroguewarlock.dirtbud.R;
+import com.github.therealroguewarlock.dirtbud.databinding.FragmentDirtBikeInformationBinding;
 
 public class DirtBikeInformationFragment extends Fragment {
+	private FragmentDirtBikeInformationBinding binding;
+	private DirtBikeInformationViewModel viewModel;
 
-	private DirtBikeInformationViewModel mViewModel;
-
-	public static DirtBikeInformationFragment newInstance() {
-		return new DirtBikeInformationFragment();
-	}
+	// QUESTION: How would we get access to the Java Code, which acts on an embedded Fragment?
+//	private InventoryFragment invFragment;
 
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.fragment_dirt_bike_information, container, false);
-	}
+		viewModel = new ViewModelProvider(this).get(DirtBikeInformationViewModel.class);
+		binding = FragmentDirtBikeInformationBinding.inflate(inflater, container, false);
+		View root = binding.getRoot();
 
-	@Override
-	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-		mViewModel = new ViewModelProvider(this).get(DirtBikeInformationViewModel.class);
-		// TODO: Use the ViewModel
+		// QUESTION: Is this how you get Fragment Java Code?
+//		invFragment = FragmentManager.findFragment(binding.fragmentContainerView);
+//
+//		Log.d("ISNULL", "Inv Fragment: " + (invFragment == null));
+//		Log.d("FRAGMENT", "Inv Fragment ViewModel: " + invFragment.getViewModel());
+
+		return root;
 	}
 
 }
