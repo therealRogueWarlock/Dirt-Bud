@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PartListAdapter extends RecyclerView.Adapter<PartListAdapter.ViewHolder> {
-	private List<Part> PartList = new ArrayList<>();
+	private List<Part> partList = new ArrayList<>();
 
 	@NonNull
 	@Override
@@ -31,27 +31,27 @@ public class PartListAdapter extends RecyclerView.Adapter<PartListAdapter.ViewHo
 	public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 		// Part Number
 		holder.headerPartNumber.setText(R.string.card_info_part_number);
-		holder.textPartNumber.setText(PartList.get(position).getPartNumber());
+		holder.textPartNumber.setText(partList.get(position).getPartNumber());
 
 		// Part Name
 		holder.headerPartName.setText(R.string.card_info_part_name);
-		holder.textPartName.setText(PartList.get(position).getPartName());
+		holder.textPartName.setText(partList.get(position).getPartName());
 
 		// Image
 		holder.imgPart.setBackgroundColor(funColor(position));
 	}
 
 	private int funColor(int seed) {
-		return Color.argb((seed * PartList.size() * 20) % 100, (seed * 32 + PartList.size() * PartList.size()) % 255, (((seed % 4) == 0) ? 18 : (((seed % 3) == 0) ? seed : ((32 * seed) + 20))) % 255, (seed * 196) % 255);
+		return Color.argb((seed * partList.size() * 20) % 100, (seed * 32 + partList.size() * partList.size()) % 255, (((seed % 4) == 0) ? 18 : (((seed % 3) == 0) ? seed : ((32 * seed) + 20))) % 255, (seed * 196) % 255);
 	}
 
 	@Override
 	public int getItemCount() {
-		return PartList.size();
+		return partList.size();
 	}
 
 	public void setPartList(List<Part> parts) {
-		PartList = (parts == null) ? new ArrayList<>() : parts;
+		partList = (parts == null) ? new ArrayList<>() : parts;
 		notifyDataSetChanged();
 	}
 
