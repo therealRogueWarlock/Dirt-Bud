@@ -42,7 +42,11 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 	}
 
 	private int funColor(int seed) {
-		return Color.argb((seed * dirtBikeList.size() * 20) % 100, (seed * 32 + dirtBikeList.size() * dirtBikeList.size()) % 255, (((seed % 4) == 0) ? 18 : (((seed % 3) == 0) ? seed : ((32 * seed) + 20))) % 255, (seed * 196) % 255);
+		return Color.argb((seed * dirtBikeList.size() * 20) % 100, (seed * 32 + dirtBikeList.size() * dirtBikeList.size()) % 255, (((seed % 4) == 0)
+		                                                                                                                           ? 18
+		                                                                                                                           : (((seed % 3) == 0)
+		                                                                                                                              ? seed
+		                                                                                                                              : ((32 * seed) + 20))) % 255, (seed * 196) % 255);
 	}
 
 	@Override
@@ -55,6 +59,15 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 		notifyDataSetChanged();
 	}
 
+	/**
+	 * =============
+	 * <br>
+	 * <b>
+	 * View Holder Class
+	 * </b>
+	 * <br>
+	 * =============
+	 */
 	public class ViewHolder extends RecyclerView.ViewHolder {
 		private final TextView headerDirtBikeBrand, headerDirtBikeDisplacement;
 		private final TextView textDirtBikeBrand, textDirtBikeDisplacement;
@@ -69,5 +82,4 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 			imgDirtBike = itemView.findViewById(R.id.img_dirt_bike);
 		}
 	}
-
 }
