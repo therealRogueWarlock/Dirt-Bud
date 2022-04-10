@@ -22,5 +22,6 @@
 	<string name = "card_info_bike_displacement">Displacement</string>
 	<string name="card_info_part_number">Part No</string>
 	<string name="card_info_part_name">Part Name</string>
+	<string name = "placeholder">PLACEHOLDER</string>
 
 </resources>
