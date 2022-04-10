@@ -25,6 +25,7 @@ public class InventoryFragment extends Fragment {
 		viewModel = new ViewModelProvider(this).get(InventoryViewModel.class);
 		binding = FragmentInventoryBinding.inflate(inflater, container, false);
 		View root = binding.getRoot();
+
 		setLiveDataObservers();
 
 		return root;
@@ -45,4 +46,8 @@ public class InventoryFragment extends Fragment {
 		partListView.setAdapter(listAdapter);
 	}
 
+	// QUESTION: Is this good or bad to do?
+//	public InventoryViewModel getViewModel() {
+//		return viewModel;
+//	}
 }

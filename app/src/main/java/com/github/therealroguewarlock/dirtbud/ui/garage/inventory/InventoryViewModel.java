@@ -27,6 +27,11 @@ public class InventoryViewModel extends AndroidViewModel {
 		return parts;
 	}
 
+//	public LiveData<List<Part>> getFilteredParts(int dirtBikeId) {
+//		// TODO: Implement this feature. Needs to be done in DAO as well
+//		return null;
+//	}
+
 	private void initLiveData() {
 		parts = garageModel.getInventory();
 	}
