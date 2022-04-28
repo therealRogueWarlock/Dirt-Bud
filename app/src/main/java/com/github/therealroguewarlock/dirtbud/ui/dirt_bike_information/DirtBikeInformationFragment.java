@@ -27,7 +27,7 @@ public class DirtBikeInformationFragment extends Fragment {
 
 		// QUESTION: Is this how you get Fragment Java Code?
 //		invFragment = FragmentManager.findFragment(binding.fragmentContainerView);
-//
+
 //		Log.d("ISNULL", "Inv Fragment: " + (invFragment == null));
 //		Log.d("FRAGMENT", "Inv Fragment ViewModel: " + invFragment.getViewModel());
 

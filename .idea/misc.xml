@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/drawable/ic_app_ico.xml" value="0.3445" />
         <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/drawable/ic_launcher_front.xml" value="0.21" />
         <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/fragment_admin_parts.xml" value="0.38822303282959875" />
-        <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/fragment_dirt_bike_information.xml" value="0.22" />
+        <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/fragment_dirt_bike_information.xml" value="0.33" />
         <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/fragment_dirt_bike_list.xml" value="0.1" />
         <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/fragment_garage.xml" value="0.2" />
         <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/fragment_inventory.xml" value="0.1867007672634271" />
