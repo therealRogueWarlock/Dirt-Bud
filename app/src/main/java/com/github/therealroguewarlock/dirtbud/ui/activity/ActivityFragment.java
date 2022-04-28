@@ -32,4 +32,10 @@ public class ActivityFragment extends Fragment {
 		super.onDestroyView();
 		binding = null;
 	}
+
+	@NonNull
+	@Override
+	public String toString() {
+		return "Im activity fragment";
+	}
 }

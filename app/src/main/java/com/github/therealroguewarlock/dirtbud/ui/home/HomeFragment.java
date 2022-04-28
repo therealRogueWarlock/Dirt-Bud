@@ -1,5 +1,6 @@
 package com.github.therealroguewarlock.dirtbud.ui.home;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,5 +32,12 @@ public class HomeFragment extends Fragment {
 	public void onDestroyView() {
 		super.onDestroyView();
 		binding = null;
+	}
+
+
+	@NonNull
+	@Override
+	public String toString() {
+		return "Im home fragment";
 	}
 }

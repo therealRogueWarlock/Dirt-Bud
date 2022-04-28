@@ -48,4 +48,10 @@ public class DirtBikeListFragment extends Fragment {
         dirtBikeListViewModel.getDirtBikes().observe(getViewLifecycleOwner(), listAdapter::setBikeList);
         dirtBikesListView.setAdapter(listAdapter);
     }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Im Dirtbikelist fragment";
+    }
 }

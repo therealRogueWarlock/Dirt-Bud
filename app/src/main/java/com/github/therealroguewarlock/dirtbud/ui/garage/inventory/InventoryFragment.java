@@ -28,6 +28,7 @@ public class InventoryFragment extends Fragment {
         viewModel = new ViewModelProvider(this).get(InventoryViewModel.class);
         binding = FragmentInventoryBinding.inflate(inflater,container,false);
         View root = binding.getRoot();
+
         return root;
     }
 
@@ -38,6 +39,9 @@ public class InventoryFragment extends Fragment {
         binding = null;
     }
 
-
-
+    @NonNull
+    @Override
+    public String toString() {
+        return "Im inventory fragment";
+    }
 }
