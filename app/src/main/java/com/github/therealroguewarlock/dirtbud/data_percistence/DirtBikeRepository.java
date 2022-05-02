@@ -72,8 +72,12 @@ public class DirtBikeRepository {
 	}
 
 	public LiveData<DirtBike> getDirtBike(int dirtBikeId) {
-		MutableLiveData<DirtBike> dirtBike = new MutableLiveData<>();
-		executorService.execute(() -> dirtBike.postValue(dao.getDirtBike(dirtBikeId)));
-		return dirtBike;
+		MutableLiveData<DirtBike> dirtBikeMutableLiveData = new MutableLiveData<>();
+		executorService.execute(() -> {
+			DirtBike bike = dao.getDirtBike(dirtBikeId);
+			bike.addParts(dao.getParts(dirtBikeId));
+			dirtBikeMutableLiveData.postValue(bike);
+		});
+		return dirtBikeMutableLiveData;
 	}
 }

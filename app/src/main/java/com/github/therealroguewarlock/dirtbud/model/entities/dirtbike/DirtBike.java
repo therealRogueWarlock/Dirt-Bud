@@ -2,9 +2,13 @@ package com.github.therealroguewarlock.dirtbud.model.entities.dirtbike;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(tableName = "dirt_bike_table")
 public class DirtBike {
@@ -18,9 +22,13 @@ public class DirtBike {
 	private int forkHeight;
 	private int wheelSize;
 	private int weight;
+	private int rideTime;
 	private boolean isFourStrokeEngine;
 
-	public DirtBike(String brand, int displacement, int engineSize, int rideHeight, int forkHeight, int wheelSize, int weight, boolean isFourStrokeEngine) {
+	@Ignore
+	private List<Part> partList;
+
+	public DirtBike(String brand, int displacement, int engineSize, int rideHeight, int forkHeight, int wheelSize, int weight, int rideTime, boolean isFourStrokeEngine) {
 		this.brand = (brand == null) ? "Brand Not Set" : brand;
 		this.displacement = displacement;
 		this.engineSize = engineSize;
@@ -28,7 +36,10 @@ public class DirtBike {
 		this.forkHeight = forkHeight;
 		this.wheelSize = wheelSize;
 		this.weight = weight;
+		this.rideTime = rideTime;
 		this.isFourStrokeEngine = isFourStrokeEngine;
+		// Ignored Fields
+		partList = new ArrayList<>();
 	}
 
 	public int getDirtBikeId() {
@@ -104,9 +115,29 @@ public class DirtBike {
 		isFourStrokeEngine = fourStrokeEngine;
 	}
 
+	public void addParts(List<Part> parts) {
+		partList.addAll(parts);
+	}
+
+	public List<Part> getParts() {
+		return partList;
+	}
+
+	public void addRideHours(int hours){
+		rideTime += hours;
+		for (Part part : partList) {
+			part.setHoursUsed(hours + part.getHoursUsed());
+		}
+	}
+
+	public int getRideTime() {
+		return rideTime;
+	}
+
 	@NonNull
 	@Override
 	public String toString() {
 		return "DirtBike{" + "brand='" + brand + '\'' + ", engineSize=" + engineSize + '}';
 	}
+
 }

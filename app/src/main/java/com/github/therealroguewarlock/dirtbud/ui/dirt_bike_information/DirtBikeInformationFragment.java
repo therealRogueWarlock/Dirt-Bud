@@ -40,17 +40,23 @@ public class DirtBikeInformationFragment extends Fragment {
 
 	private void setDirtBikeInformation() {
 		// viewModel -> getDirtBike -> Observe Things
-		LiveData<DirtBike> db = viewModel.getDirtBike();
-		db.observe(getViewLifecycleOwner(), dirtBike -> binding.brand.setText(dirtBike.getBrand()));
-		db.observe(getViewLifecycleOwner(), dirtBike -> binding.displacement.setText(String.format(Locale.ENGLISH, "%d", dirtBike.getDisplacement())));
-		db.observe(getViewLifecycleOwner(), dirtBike -> binding.engineSize.setText(String.format(Locale.ENGLISH, "%d", dirtBike.getEngineSize())));
-		db.observe(getViewLifecycleOwner(), dirtBike -> binding.rideHeight.setText(String.format(Locale.ENGLISH, "%d", dirtBike.getRideHeight())));
-		db.observe(getViewLifecycleOwner(), dirtBike -> binding.forkHeight.setText(String.format(Locale.ENGLISH, "%d", dirtBike.getForkHeight())));
-		db.observe(getViewLifecycleOwner(), dirtBike -> binding.wheelSize.setText(String.format(Locale.ENGLISH, "%d", dirtBike.getWheelSize())));
-		db.observe(getViewLifecycleOwner(), dirtBike -> binding.weight.setText(String.format(Locale.ENGLISH, "%d", dirtBike.getWeight())));
-		db.observe(getViewLifecycleOwner(), dirtBike -> binding.isFourStroke.setText(dirtBike.isFourStrokeEngine()
-		                                                                             ? "4-stroke"
-		                                                                             : "2-stroke"));
+		LiveData<DirtBike> viewModelDirtBikeLiveData = viewModel.getDirtBikeLiveData();
+		viewModelDirtBikeLiveData.observe(getViewLifecycleOwner(), dirtBike -> binding.brand.setText(dirtBike.getBrand()));
+		viewModelDirtBikeLiveData.observe(getViewLifecycleOwner(), dirtBike -> binding.displacement.setText(String.format(Locale.ENGLISH, "%d", dirtBike
+				.getDisplacement())));
+		viewModelDirtBikeLiveData.observe(getViewLifecycleOwner(), dirtBike -> binding.engineSize.setText(String.format(Locale.ENGLISH, "%d", dirtBike
+				.getEngineSize())));
+		viewModelDirtBikeLiveData.observe(getViewLifecycleOwner(), dirtBike -> binding.rideHeight.setText(String.format(Locale.ENGLISH, "%d", dirtBike
+				.getRideHeight())));
+		viewModelDirtBikeLiveData.observe(getViewLifecycleOwner(), dirtBike -> binding.forkHeight.setText(String.format(Locale.ENGLISH, "%d", dirtBike
+				.getForkHeight())));
+		viewModelDirtBikeLiveData.observe(getViewLifecycleOwner(), dirtBike -> binding.wheelSize.setText(String.format(Locale.ENGLISH, "%d", dirtBike
+				.getWheelSize())));
+		viewModelDirtBikeLiveData.observe(getViewLifecycleOwner(), dirtBike -> binding.weight.setText(String.format(Locale.ENGLISH, "%d", dirtBike
+				.getWeight())));
+		viewModelDirtBikeLiveData.observe(getViewLifecycleOwner(), dirtBike -> binding.isFourStroke.setText(dirtBike.isFourStrokeEngine()
+		                                                                                                    ? "4-stroke"
+		                                                                                                    : "2-stroke"));
 	}
 
 	@Override
@@ -64,7 +70,7 @@ public class DirtBikeInformationFragment extends Fragment {
 		partListView.setLayoutManager(new LinearLayoutManager(getContext().getApplicationContext()));
 
 		PartListAdapter listAdapter = new PartListAdapter();
-		viewModel.getParts().observe(getViewLifecycleOwner(), listAdapter::setPartList);
+		viewModel.getDirtBikeLiveData().observe(getViewLifecycleOwner(), dirtBike -> listAdapter.setPartList(dirtBike.getParts()));
 		partListView.setAdapter(listAdapter);
 	}
 
