@@ -53,6 +53,6 @@ public interface DirtBudDAO {
 	@Query("SELECT * FROM part_table WHERE partId = :partId")
 	Part getPart(int partId);
 
-	@Query("SELECT * FROM part_table s JOIN part_binding b ON s.partId = b.partId WHERE dirtBikeId = :dirtBikeId")
+	@Query("SELECT s.* FROM part_table s JOIN part_binding b ON s.partId = b.partId WHERE dirtBikeId = :dirtBikeId")
 	LiveData<List<Part>> getParts(int dirtBikeId);
 }
