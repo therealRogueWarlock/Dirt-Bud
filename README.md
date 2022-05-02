@@ -22,7 +22,7 @@ This will also help you keep note of the different dates you work on your Dirtbi
 
 * [x] As a user, I want to be able to see all my different bike parts, so I can keep track of in use, and spare parts
 
-* [x] As a user, I want to be able to see specifications about individual parts, so I do not need to remember details about every single part
+* [ ] As a user, I want to be able to see specifications about individual parts, so I do not need to remember details about every single part
 
 * [ ] As a user, I want to be able to add friends, so I can share my repertoire of overly expensive parts to brag about
 
