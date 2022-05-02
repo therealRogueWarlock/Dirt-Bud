@@ -14,15 +14,15 @@ This will also help you keep note of the different dates you work on your Dirtbi
 
 ## Requirements
 
-* [ ] As a user, I want to be able to see information about my garage, so I can see my different dirt bikes
+* [x] As a user, I want to be able to see information about my garage, so I can see my different dirt bikes
 
 * [ ] As a user, I want to be able to see information about myself, so I can track my fitness stats
 
 * [ ] As a user, I want to be able to see information about dirt bike status, so I know when different parts might need to be checked upon or changed out
 
-* [ ] As a user, I want to be able to see all my different bike parts, so I can keep track of in use, and spare parts
+* [x] As a user, I want to be able to see all my different bike parts, so I can keep track of in use, and spare parts
 
-* [ ] As a user, I want to be able to see specifications about individual parts, so I do not need to remember details about every single part
+* [x] As a user, I want to be able to see specifications about individual parts, so I do not need to remember details about every single part
 
 * [ ] As a user, I want to be able to add friends, so I can share my repertoire of overly expensive parts to brag about
 
