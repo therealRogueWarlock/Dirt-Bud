@@ -45,9 +45,4 @@ public class InventoryFragment extends Fragment {
 		viewModel.getParts().observe(getViewLifecycleOwner(), listAdapter::setPartList);
 		partListView.setAdapter(listAdapter);
 	}
-
-	// QUESTION: Is this good or bad to do?
-//	public InventoryViewModel getViewModel() {
-//		return viewModel;
-//	}
 }

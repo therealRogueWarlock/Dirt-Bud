@@ -187,23 +187,19 @@
 				android:layout_height = "wrap_content"
 				android:text = "Dirt Bike Parts"
 				app:layout_constraintTop_toTopOf = "parent"
-				app:layout_constraintBottom_toTopOf = "@id/fragmentContainerView"
+				app:layout_constraintBottom_toTopOf = "@id/bike_part_recycler_view"
 				app:layout_constraintStart_toStartOf = "parent"
 				app:layout_constraintEnd_toEndOf = "parent" />
 
-		<androidx.fragment.app.FragmentContainerView
-				android:id = "@+id/fragmentContainerView"
-				android:name = "com.github.therealroguewarlock.dirtbud.ui.garage.inventory.InventoryFragment"
+		<androidx.recyclerview.widget.RecyclerView
+				android:id = "@+id/bike_part_recycler_view"
 				android:layout_width = "0dp"
 				android:layout_height = "0dp"
-				app:layout_constraintTop_toBottomOf = "@id/txt_parts"
 				app:layout_constraintBottom_toBottomOf = "parent"
-				app:layout_constraintEnd_toEndOf = "parent"
 				app:layout_constraintStart_toStartOf = "parent"
-				android:layout_marginTop = "8dp"
-				android:layout_marginStart = "8dp"
-				android:layout_marginEnd = "8dp" />
-
+				app:layout_constraintEnd_toEndOf = "parent"
+				app:layout_constraintTop_toTopOf = "parent"
+				android:layout_marginTop = "24dp" />
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

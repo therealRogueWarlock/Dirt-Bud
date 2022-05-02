@@ -27,7 +27,11 @@
 			android:id = "@+id/nav_dirt_bike_list"
 			android:name = "com.github.therealroguewarlock.dirtbud.ui.garage.dirtbikelist.DirtBikeListFragment"
 			android:label = "Dirt bikes"
-			tools:layout = "@layout/fragment_dirt_bike_list" />
+			tools:layout = "@layout/fragment_dirt_bike_list" >
+		<action
+				android:id = "@+id/action_nav_dirt_bike_info"
+				app:destination = "@id/nav_dirt_bike_info" />
+	</fragment>
 
 	<fragment
 			android:id = "@+id/nav_inventory"

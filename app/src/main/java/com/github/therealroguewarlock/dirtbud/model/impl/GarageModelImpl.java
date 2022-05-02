@@ -32,7 +32,18 @@ public class GarageModelImpl implements GarageModel {
 	}
 
 	@Override
+	public LiveData<DirtBike> getDirtBike(int dirtBikeId) {
+		return bikeRepository.getDirtBike(dirtBikeId);
+	}
+
+	@Override
 	public LiveData<List<Part>> getInventory() {
 		return partRepository.getAllEntities();
 	}
+
+	@Override
+	public LiveData<List<Part>> getParts(int dirtBikeId) {
+		return partRepository.getPartsFrom(dirtBikeId);
+	}
+
 }

@@ -23,5 +23,24 @@ public class DirtBikeInformationViewModel extends AndroidViewModel {
 	public DirtBikeInformationViewModel(@NonNull Application application) {
 		super(application);
 		garageModel = new GarageModelImpl(application);
+
+		initLiveData();
+	}
+
+	private void initLiveData() {
+
+	}
+
+	public LiveData<List<Part>> getParts() {
+		return dirtBikeParts;
+	}
+
+	public void findDirtBike(int dirtBikeId) {
+		dirtBike = garageModel.getDirtBike(dirtBikeId);
+		dirtBikeParts = garageModel.getParts(dirtBikeId);
+	}
+
+	public LiveData<DirtBike> getDirtBike() {
+		return dirtBike;
 	}
 }

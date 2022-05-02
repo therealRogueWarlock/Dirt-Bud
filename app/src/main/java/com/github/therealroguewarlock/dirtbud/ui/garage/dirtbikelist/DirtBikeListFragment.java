@@ -10,14 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.github.therealroguewarlock.dirtbud.R;
 import com.github.therealroguewarlock.dirtbud.databinding.FragmentDirtBikeListBinding;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 
 public class DirtBikeListFragment extends Fragment {
-
 	private FragmentDirtBikeListBinding binding;
 	private DirtBikeListViewModel viewModel;
 
@@ -52,6 +53,11 @@ public class DirtBikeListFragment extends Fragment {
 
 	private void dirtBikeClicked(DirtBike dirtBike) {
 		Toast.makeText(getContext().getApplicationContext(), "DirtBike: " + dirtBike.getBrand(), Toast.LENGTH_SHORT).show();
+
+		Bundle dataTransferBundle = new Bundle();
+		dataTransferBundle.putInt("dirt_bike_id", dirtBike.getDirtBikeId());
+
+		NavHostFragment.findNavController(this).navigate(R.id.action_nav_dirt_bike_info, dataTransferBundle);
 		// TODO: Implement navigation from here, to a View with information about the DirtBike, including a list of all the parts it has
 
 	}
