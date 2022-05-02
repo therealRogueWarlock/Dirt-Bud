@@ -1,4 +1,4 @@
-package com.github.therealroguewarlock.dirtbud.datapercistence;
+package com.github.therealroguewarlock.dirtbud.data_percistence;
 
 import android.content.Context;
 
@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 
-@Database(entities = {Part.class, DirtBike.class}, version = 2)
+@Database(entities = {Part.class, DirtBike.class}, version = 1)
 public abstract class DirtBudDatabase extends RoomDatabase {
 	private static DirtBudDatabase instance;
 

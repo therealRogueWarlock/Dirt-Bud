@@ -4,7 +4,7 @@ import android.content.Context;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 
-import com.github.therealroguewarlock.dirtbud.datapercistence.PartRepository;
+import com.github.therealroguewarlock.dirtbud.data_percistence.PartRepository;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 
 import org.junit.After;

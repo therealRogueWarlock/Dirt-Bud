@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+			  xmlns:app = "http://schemas.android.com/apk/res-auto"
+			  android:layout_width = "match_parent"
+			  android:layout_height = "match_parent"
+			  android:id = "@+id/background_dirt_bike_information"
+			  android:orientation = "vertical">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+			android:id = "@+id/div_dirt_bike_info_detailed"
+			android:layout_height = "wrap_content"
+			android:layout_width = "match_parent"
+			android:paddingHorizontal = "24dp">
+
+		<TextView
+				android:id = "@+id/info_brand"
+				app:layout_constraintTop_toTopOf = "parent"
+				app:layout_constraintBottom_toTopOf = "@id/info_displacement"
+				app:layout_constraintStart_toStartOf = "parent"
+				android:text = "Brand: "
+				android:textAlignment = "textStart"
+				android:layout_height = "wrap_content"
+				android:layout_width = "wrap_content"
+				android:layout_marginVertical = "8dp" />
+
+		<TextView
+				android:id = "@+id/brand"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				app:layout_constraintTop_toTopOf = "@id/info_brand"
+				app:layout_constraintBottom_toBottomOf = "@id/info_brand"
+				app:layout_constraintEnd_toEndOf = "parent"
+				android:text = "@string/placeholder"
+				android:textAlignment = "textEnd" />
+
+		<TextView
+				android:id = "@+id/info_displacement"
+				app:layout_constraintTop_toBottomOf = "@id/info_brand"
+				app:layout_constraintBottom_toTopOf = "@id/info_engine_size"
+				app:layout_constraintStart_toStartOf = "parent"
+				android:text = "Displacement: "
+				android:layout_height = "wrap_content"
+				android:layout_width = "wrap_content"
+				android:layout_marginVertical = "8dp" />
+
+		<TextView
+				android:id = "@+id/displacement"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				app:layout_constraintTop_toTopOf = "@id/info_displacement"
+				app:layout_constraintBottom_toBottomOf = "@id/info_displacement"
+				app:layout_constraintEnd_toEndOf = "parent"
+				android:text = "@string/placeholder"
+				android:textAlignment = "textEnd" />
+
+		<TextView
+				android:id = "@+id/info_engine_size"
+				app:layout_constraintTop_toBottomOf = "@id/info_displacement"
+				app:layout_constraintBottom_toTopOf = "@id/info_ride_height"
+				app:layout_constraintStart_toStartOf = "parent"
+				android:text = "Engine Size: "
+				android:layout_height = "wrap_content"
+				android:layout_width = "wrap_content"
+				android:layout_marginVertical = "8dp" />
+
+		<TextView
+				android:id = "@+id/engine_size"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				app:layout_constraintTop_toTopOf = "@id/info_engine_size"
+				app:layout_constraintBottom_toBottomOf = "@id/info_engine_size"
+				app:layout_constraintEnd_toEndOf = "parent"
+				android:text = "@string/placeholder"
+				android:textAlignment = "textEnd" />
+
+		<TextView
+				android:id = "@+id/info_ride_height"
+				app:layout_constraintTop_toBottomOf = "@id/info_engine_size"
+				app:layout_constraintBottom_toTopOf = "@id/info_fork_height"
+				app:layout_constraintStart_toStartOf = "parent"
+				android:text = "Ride Height: "
+				android:layout_height = "wrap_content"
+				android:layout_width = "wrap_content"
+				android:layout_marginVertical = "8dp" />
+
+		<TextView
+				android:id = "@+id/ride_height"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				app:layout_constraintTop_toTopOf = "@id/info_ride_height"
+				app:layout_constraintBottom_toBottomOf = "@id/info_ride_height"
+				app:layout_constraintEnd_toEndOf = "parent"
+				android:text = "@string/placeholder"
+				android:textAlignment = "textEnd" />
+
+		<TextView
+				android:id = "@+id/info_fork_height"
+				app:layout_constraintTop_toBottomOf = "@id/info_ride_height"
+				app:layout_constraintBottom_toTopOf = "@id/info_wheel_size"
+				app:layout_constraintStart_toStartOf = "parent"
+				android:text = "Fork Height: "
+				android:layout_height = "wrap_content"
+				android:layout_width = "wrap_content"
+				android:layout_marginVertical = "8dp" />
+
+		<TextView
+				android:id = "@+id/fork_height"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				app:layout_constraintTop_toTopOf = "@id/info_fork_height"
+				app:layout_constraintBottom_toBottomOf = "@id/info_fork_height"
+				app:layout_constraintEnd_toEndOf = "parent"
+				android:text = "@string/placeholder"
+				android:textAlignment = "textEnd" />
+
+		<TextView
+				android:id = "@+id/info_wheel_size"
+				app:layout_constraintTop_toBottomOf = "@id/info_fork_height"
+				app:layout_constraintBottom_toTopOf = "@id/info_weight"
+				app:layout_constraintStart_toStartOf = "parent"
+				android:text = "Wheel Size: "
+				android:layout_height = "wrap_content"
+				android:layout_width = "wrap_content"
+				android:layout_marginVertical = "8dp" />
+
+		<TextView
+				android:id = "@+id/wheel_size"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				app:layout_constraintTop_toTopOf = "@id/info_wheel_size"
+				app:layout_constraintBottom_toBottomOf = "@id/info_wheel_size"
+				app:layout_constraintEnd_toEndOf = "parent"
+				android:text = "@string/placeholder"
+				android:textAlignment = "textEnd" />
+
+		<TextView
+				android:id = "@+id/info_weight"
+				app:layout_constraintTop_toBottomOf = "@id/info_wheel_size"
+				app:layout_constraintBottom_toTopOf = "@id/info_is_four_stroke"
+				app:layout_constraintStart_toStartOf = "parent"
+				android:text = "Weight: "
+				android:layout_height = "wrap_content"
+				android:layout_width = "wrap_content"
+				android:layout_marginVertical = "8dp" />
+
+		<TextView
+				android:id = "@+id/weight"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				app:layout_constraintTop_toTopOf = "@id/info_weight"
+				app:layout_constraintBottom_toBottomOf = "@id/info_weight"
+				app:layout_constraintEnd_toEndOf = "parent"
+				android:text = "@string/placeholder"
+				android:textAlignment = "textEnd" />
+
+		<TextView
+				android:id = "@+id/info_is_four_stroke"
+				app:layout_constraintTop_toBottomOf = "@id/info_weight"
+				app:layout_constraintBottom_toBottomOf = "parent"
+				app:layout_constraintStart_toStartOf = "parent"
+				android:text = "Stroke: "
+				android:layout_height = "wrap_content"
+				android:layout_width = "wrap_content"
+				android:layout_marginVertical = "8dp" />
+
+		<TextView
+				android:id = "@+id/is_four_stroke"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				app:layout_constraintTop_toTopOf = "@id/info_is_four_stroke"
+				app:layout_constraintBottom_toBottomOf = "@id/info_is_four_stroke"
+				app:layout_constraintEnd_toEndOf = "parent"
+				android:text = "@string/placeholder"
+				android:textAlignment = "textEnd" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+			android:id = "@+id/div_part_list"
+			android:layout_height = "0dp"
+			android:layout_width = "match_parent"
+			android:layout_weight = "1">
+
+		<TextView
+				android:id = "@+id/txt_parts"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				android:text = "Dirt Bike Parts"
+				app:layout_constraintTop_toTopOf = "parent"
+				app:layout_constraintBottom_toTopOf = "@id/fragmentContainerView"
+				app:layout_constraintStart_toStartOf = "parent"
+				app:layout_constraintEnd_toEndOf = "parent" />
+
+		<androidx.fragment.app.FragmentContainerView
+				android:id = "@+id/fragmentContainerView"
+				android:name = "com.github.therealroguewarlock.dirtbud.ui.garage.inventory.InventoryFragment"
+				android:layout_width = "0dp"
+				android:layout_height = "0dp"
+				app:layout_constraintTop_toBottomOf = "@id/txt_parts"
+				app:layout_constraintBottom_toBottomOf = "parent"
+				app:layout_constraintEnd_toEndOf = "parent"
+				app:layout_constraintStart_toStartOf = "parent"
+				android:layout_marginTop = "8dp"
+				android:layout_marginStart = "8dp"
+				android:layout_marginEnd = "8dp" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

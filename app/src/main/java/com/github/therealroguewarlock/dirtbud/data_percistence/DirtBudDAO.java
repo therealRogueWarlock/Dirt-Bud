@@ -1,4 +1,4 @@
-package com.github.therealroguewarlock.dirtbud.datapercistence;
+package com.github.therealroguewarlock.dirtbud.data_percistence;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

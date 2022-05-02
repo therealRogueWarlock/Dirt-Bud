@@ -65,7 +65,7 @@
 			<ImageView
 					android:background="@color/purple_500"
 					android:id = "@+id/img_dirt_bike"
-					android:src = "@drawable/ic_placeholder_bike_24"
+					android:src = "@drawable/ic_placeholder_24"
 					android:layout_width = "match_parent"
 					android:layout_height = "match_parent"
 					android:contentDescription = "PLACEHOLDER FOR IMAGE" />

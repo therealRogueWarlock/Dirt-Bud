@@ -1,7 +1,6 @@
 package com.github.therealroguewarlock.dirtbud.ui.garage.dirtbikelist;
 
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +18,7 @@ import java.util.List;
 
 public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapter.ViewHolder> {
 	private List<DirtBike> dirtBikeList = new ArrayList<>();
+	private OnClickListener listener;
 
 	@NonNull
 	@Override
@@ -31,11 +31,11 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 	@Override
 	public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 		// Brand
-		holder.headerDirtBikeBrand.setText(R.string.card_info_brand);
+		holder.headerDirtBikeBrand.setText(R.string.card_info_bike_brand);
 		holder.textDirtBikeBrand.setText(dirtBikeList.get(position).getBrand());
 
 		// Displacement
-		holder.headerDirtBikeDisplacement.setText(R.string.card_info_displacement);
+		holder.headerDirtBikeDisplacement.setText(R.string.card_info_bike_displacement);
 		holder.textDirtBikeDisplacement.setText(String.valueOf(dirtBikeList.get(position).getDisplacement()));
 
 		// Image
@@ -43,7 +43,11 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 	}
 
 	private int funColor(int seed) {
-		return Color.argb((seed * dirtBikeList.size() * 20) % 100, (seed * 32 + dirtBikeList.size() * dirtBikeList.size()) % 255, (((seed % 4) == 0) ? 18 : (((seed % 3) == 0) ? seed : ((32 * seed) + 20))) % 255, (seed * 196) % 255);
+		return Color.argb((seed * dirtBikeList.size() * 20) % 100, (seed * 32 + dirtBikeList.size() * dirtBikeList.size()) % 255, (((seed % 4) == 0)
+		                                                                                                                           ? 18
+		                                                                                                                           : (((seed % 3) == 0)
+		                                                                                                                              ? seed
+		                                                                                                                              : ((32 * seed) + 20))) % 255, (seed * 196) % 255);
 	}
 
 	@Override
@@ -52,12 +56,23 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 	}
 
 	public void setBikeList(List<DirtBike> dirtBikes) {
-		// TODO: Check if this is needed later, or if it causes issues
-		Log.d("NEWBIKELIST", "A new Bike List has been sent to Garage | " + dirtBikes);
 		dirtBikeList = (dirtBikes == null) ? new ArrayList<>() : dirtBikes;
 		notifyDataSetChanged();
 	}
 
+	public void setOnClickListener(OnClickListener listener){
+		this.listener = listener;
+	}
+
+	/**
+	 * =============
+	 * <br>
+	 * <b>
+	 * View Holder Class
+	 * </b>
+	 * <br>
+	 * =============
+	 */
 	public class ViewHolder extends RecyclerView.ViewHolder {
 		private final TextView headerDirtBikeBrand, headerDirtBikeDisplacement;
 		private final TextView textDirtBikeBrand, textDirtBikeDisplacement;
@@ -70,7 +85,12 @@ public class DirtBikeListAdapter extends RecyclerView.Adapter<DirtBikeListAdapte
 			textDirtBikeBrand = itemView.findViewById(R.id.text_box_one);
 			textDirtBikeDisplacement = itemView.findViewById(R.id.text_box_two);
 			imgDirtBike = itemView.findViewById(R.id.img_dirt_bike);
+
+			itemView.setOnClickListener(view -> listener.onClick(dirtBikeList.get(getBindingAdapterPosition())));
 		}
 	}
 
+	interface OnClickListener {
+		void onClick(DirtBike dirtBike);
+	}
 }
