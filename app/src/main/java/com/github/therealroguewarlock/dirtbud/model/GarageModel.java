@@ -39,4 +39,19 @@ public interface GarageModel {
 	 */
 	LiveData<List<Part>> getParts(int dirtBikeId);
 
+	/**
+	 * Set ridetime for a DirtBike and its Parts
+	 *
+	 * @param dirtBikeId ID for the DirtBike which Hours are to be set
+	 * @param hours      Hours to set for DirtBike and its parts
+	 */
+	void setHours(int dirtBikeId, int hours);
+
+	/**
+	 * Add ridetime to a DirtBike and its Parts
+	 *
+	 * @param dirtBikeId ID for the DirtBike which Hours are to be added
+	 * @param hours      Hours to added to DirtBike and its parts
+	 */
+	void addHours(int dirtBikeId, int hours);
 }
