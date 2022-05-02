@@ -3,6 +3,7 @@ package com.github.therealroguewarlock.dirtbud.data_percistence;
 import android.content.Context;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 
@@ -68,5 +69,11 @@ public class PartRepository {
 	 */
 	public void updatePart(Part updatedPart) {
 		executorService.execute(() -> dao.update(updatedPart));
+	}
+
+	public LiveData<List<Part>> getPartsFrom(int dirtBikeId) {
+		MutableLiveData<List<Part>> parts = new MutableLiveData<>();
+		executorService.execute(() -> parts.postValue(dao.getParts(dirtBikeId)));
+		return parts;
 	}
 }
