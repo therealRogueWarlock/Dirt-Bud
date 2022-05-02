@@ -46,4 +46,14 @@ public class GarageModelImpl implements GarageModel {
 		return partRepository.getPartsFrom(dirtBikeId);
 	}
 
+	@Override
+	public void setHours(int dirtBikeId, int hours) {
+		// TODO: Implement
+	}
+
+	@Override
+	public void addHours(int dirtBikeId, int hours) {
+		// TODO: Implement
+	}
+
 }
