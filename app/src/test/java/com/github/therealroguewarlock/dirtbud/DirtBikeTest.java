@@ -5,12 +5,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import android.content.Context;
-
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.TimeLimitedPart;
-import com.github.therealroguewarlock.dirtbud.repository.PartRepository;
 
 
 public class DirtBikeTest {
