@@ -4,8 +4,8 @@ import android.content.Context;
 
 import androidx.lifecycle.LiveData;
 
-import com.github.therealroguewarlock.dirtbud.data_percistence.DirtBikeRepository;
-import com.github.therealroguewarlock.dirtbud.data_percistence.PartRepository;
+import com.github.therealroguewarlock.dirtbud.repository.DirtBikeRepository;
+import com.github.therealroguewarlock.dirtbud.repository.PartRepository;
 import com.github.therealroguewarlock.dirtbud.model.DummyData;
 import com.github.therealroguewarlock.dirtbud.model.GarageModel;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;

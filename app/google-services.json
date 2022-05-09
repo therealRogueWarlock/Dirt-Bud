@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "554143048645",
+    "firebase_url": "https://motocrosspal-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "motocrosspal",
+    "storage_bucket": "motocrosspal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554143048645:android:e27d66ba96b9afd581e1ac",
+        "android_client_info": {
+          "package_name": "com.example.birtbud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "554143048645-6rkfkcs8fdfani2rubdsvnrddesp6g3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHKAlPkAMm6KroZ4Md_fi4Q08cSTDwJUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554143048645-6rkfkcs8fdfani2rubdsvnrddesp6g3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554143048645:android:0f0b72d07586f75881e1ac",
+        "android_client_info": {
+          "package_name": "com.github.therealroguewarlock.dirtbud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "554143048645-6rkfkcs8fdfani2rubdsvnrddesp6g3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHKAlPkAMm6KroZ4Md_fi4Q08cSTDwJUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554143048645-6rkfkcs8fdfani2rubdsvnrddesp6g3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,7 +4,7 @@ import android.content.Context;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 
-import com.github.therealroguewarlock.dirtbud.data_percistence.PartRepository;
+import com.github.therealroguewarlock.dirtbud.repository.PartRepository;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 
 import org.junit.After;
@@ -20,8 +20,8 @@ public class PartTest {
 		Context c = InstrumentationRegistry.getInstrumentation().getTargetContext();
 		repository = PartRepository.getInstance(c);
 
-		defaultPartOne = new Part("M3", "Bolt", "A common European Bolt", "Metallic", 20);
-		defaultPartTwo = new Part("P230", "Piston", "The newest innovative piston", "Chrome", 1203);
+		defaultPartOne = new Part("M3", "Bolt", "A common European Bolt", "Metallic", 20, 50);
+		defaultPartTwo = new Part("P230", "Piston", "The newest innovative piston", "Chrome", 10, 40);
 	}
 
 	@After

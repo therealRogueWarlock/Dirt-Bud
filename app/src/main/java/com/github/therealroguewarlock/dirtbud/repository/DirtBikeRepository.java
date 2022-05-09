@@ -1,10 +1,12 @@
-package com.github.therealroguewarlock.dirtbud.data_percistence;
+package com.github.therealroguewarlock.dirtbud.repository;
 
 import android.content.Context;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.github.therealroguewarlock.dirtbud.data_percistence.DirtBudDAO;
+import com.github.therealroguewarlock.dirtbud.data_percistence.DirtBudDatabase;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 
 import java.util.List;
