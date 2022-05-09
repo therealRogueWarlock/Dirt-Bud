@@ -16,10 +16,10 @@ import java.util.List;
 @Dao
 public interface DirtBudDAO {
 	// DirtBike
-	@Insert(onConflict = OnConflictStrategy.ABORT,entity = DirtBike.class)
+	@Insert(onConflict = OnConflictStrategy.ABORT, entity = DirtBike.class)
 	void insert(DirtBike dirtBike);
 
-	@Update(onConflict = OnConflictStrategy.ABORT,entity = DirtBike.class)
+	@Update(onConflict = OnConflictStrategy.ABORT, entity = DirtBike.class)
 	void update(DirtBike dirtBike);
 
 	@Delete()
@@ -52,4 +52,7 @@ public interface DirtBudDAO {
 
 	@Query("SELECT * FROM part_table WHERE partId = :partId")
 	Part getPart(int partId);
+
+	@Query("SELECT s.* FROM part_table s JOIN part_binding b ON s.partId = b.partId WHERE dirtBikeId = :dirtBikeId")
+	List<Part> getParts(int dirtBikeId);
 }

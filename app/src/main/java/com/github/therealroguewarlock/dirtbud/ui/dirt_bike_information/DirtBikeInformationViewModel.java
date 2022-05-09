@@ -8,20 +8,23 @@ import androidx.lifecycle.LiveData;
 
 import com.github.therealroguewarlock.dirtbud.model.GarageModel;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
-import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 import com.github.therealroguewarlock.dirtbud.model.impl.GarageModelImpl;
 
-import java.util.List;
-
 public class DirtBikeInformationViewModel extends AndroidViewModel {
-	// TODO: Get DirtBike and DirtBikeParts initiated, with information from the Fragment
-	private LiveData<DirtBike> dirtBike;
-	private LiveData<List<Part>> dirtBikeParts;
+	private LiveData<DirtBike> dirtBikeLiveData;
 
 	private final GarageModel garageModel;
 
 	public DirtBikeInformationViewModel(@NonNull Application application) {
 		super(application);
 		garageModel = new GarageModelImpl(application);
+	}
+
+	public void findDirtBike(int dirtBikeId) {
+		dirtBikeLiveData = garageModel.getDirtBike(dirtBikeId);
+	}
+
+	public LiveData<DirtBike> getDirtBikeLiveData() {
+		return dirtBikeLiveData;
 	}
 }

@@ -29,9 +29,5 @@
 
 		</item>
 
-		<!-- TODO: REMOVE THIS -->
-		<item
-				android:id = "@+id/nav_dirt_bike_info"
-				android:title = "INFO" />
 	</group>
 </menu>
