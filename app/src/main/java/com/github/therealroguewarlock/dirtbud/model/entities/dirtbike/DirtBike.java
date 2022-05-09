@@ -22,14 +22,14 @@ public class DirtBike {
 	private int forkHeight;
 	private int wheelSize;
 	private int weight;
-	private int rideTime;
-	private boolean isFourStrokeEngine;
 	private float totalHours;
+	private boolean isFourStrokeEngine;
+
 
 	@Ignore
 	private List<Part> partList;
 
-	public DirtBike(String brand, int displacement, int engineSize, int rideHeight, int forkHeight, int wheelSize, int weight, int rideTime, boolean isFourStrokeEngine, float totalHours) {
+	public DirtBike(String brand, int displacement, int engineSize, int rideHeight, int forkHeight, int wheelSize, int weight, float totalHours, boolean isFourStrokeEngine) {
 		this.brand = (brand == null) ? "Brand Not Set" : brand;
 		this.displacement = displacement;
 		this.engineSize = engineSize;
@@ -37,9 +37,9 @@ public class DirtBike {
 		this.forkHeight = forkHeight;
 		this.wheelSize = wheelSize;
 		this.weight = weight;
-		this.rideTime = rideTime;
-		this.isFourStrokeEngine = isFourStrokeEngine;
 		this.totalHours = totalHours;
+		this.isFourStrokeEngine = isFourStrokeEngine;
+
 		// Ignored Fields
 		partList = new ArrayList<>();
 	}
@@ -117,8 +117,16 @@ public class DirtBike {
 		isFourStrokeEngine = fourStrokeEngine;
 	}
 
+	public float getTotalHours() {
+		return totalHours;
+	}
+
 	public void addParts(List<Part> parts) {
 		partList.addAll(parts);
+	}
+
+	public void addPart(Part part){
+		partList.add(part);
 	}
 
 	public List<Part> getParts() {
@@ -126,15 +134,12 @@ public class DirtBike {
 	}
 
 	public void addRideHours(float hours){
-		rideTime += hours;
+		totalHours += hours;
 		for (Part part : partList) {
 			part.setHoursUsed(hours + part.getHoursUsed());
 		}
 	}
 
-	public int getRideTime() {
-		return rideTime;
-	}
 
 
 	@NonNull

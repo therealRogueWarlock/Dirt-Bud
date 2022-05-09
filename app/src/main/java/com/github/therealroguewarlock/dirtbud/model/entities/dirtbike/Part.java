@@ -16,18 +16,17 @@ public class Part {
 	private String partDescription;
 	private final String colour;
 
-	// Replacement Time
-	private float estimatedDurableHours;
+
 	// total time used
 	private float hoursUsed;
 
-	public Part(@NotNull String partNumber, @NotNull String partName, String partDescription, String colour, float hoursUsed, float estimatedDurableHours) {
+	public Part(@NotNull String partNumber, @NotNull String partName, String partDescription, String colour, float hoursUsed) {
 		this.partNumber = partNumber;
 		this.partName = partName;
 		this.partDescription = partDescription;
 		this.colour = colour;
 		this.hoursUsed = hoursUsed;
-		this.estimatedDurableHours = estimatedDurableHours;
+
 	}
 
 	public int getPartId() {
@@ -67,4 +66,6 @@ public class Part {
 	public void setHoursUsed(float hoursUsed) {
 		this.hoursUsed = hoursUsed;
 	}
+
+
 }

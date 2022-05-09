@@ -2,6 +2,7 @@ package com.github.therealroguewarlock.dirtbud.model;
 
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
+import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.TimeLimitedPart;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -41,10 +42,10 @@ public class DummyData {
 	public ArrayList<Part> getInventory() {
 		ArrayList<Part> dummyParts = new ArrayList<>();
 
-		dummyParts.add(new Part("m213", "piston", "The pistion in the motor", "metal", 12));
-		dummyParts.add(new Part("m321", "clutch", "good clutch", "metal", 80));
-		dummyParts.add(new Part("m513", "foot peck", "what you stand on", "metal", 70));
-		dummyParts.add(new Part("m7613", "valves", "the valves in the motor", "metal", 50));
+		dummyParts.add(new TimeLimitedPart("m213", "piston", "The pistion in the motor", "metal", 12,60));
+		dummyParts.add(new TimeLimitedPart("m321", "clutch", "good clutch", "metal", 80,53));
+		dummyParts.add(new TimeLimitedPart("m513", "foot peck", "what you stand on", "metal", 70,33));
+		dummyParts.add(new TimeLimitedPart("m7613", "valves", "the valves in the motor", "metal", 50, 55));
 
 		return dummyParts;
 	}
