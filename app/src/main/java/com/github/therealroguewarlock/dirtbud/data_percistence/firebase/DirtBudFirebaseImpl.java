@@ -17,10 +17,12 @@ import java.util.List;
 public class DirtBudFirebaseImpl implements DirtBudFirebase{
 
     private FirebaseFirestore fireStoreDB;
+    private static DirtBudFirebase instance;
 
-    public DirtBudFirebaseImpl() {
+
+    private DirtBudFirebaseImpl() {
         fireStoreDB = FirebaseFirestore.getInstance();
-
+        Log.d("fireStore test", "FirebaseImple init");
         fireStoreDB.collection("users")
                 .get()
                 .addOnCompleteListener(task -> {
@@ -32,6 +34,13 @@ public class DirtBudFirebaseImpl implements DirtBudFirebase{
                         Log.w("fireStore test", "Error getting documents.", task.getException());
                     }
                 });
+    }
+
+    public static DirtBudFirebase getInstance() {
+        if (instance == null) {
+            instance = new DirtBudFirebaseImpl();
+        }
+        return instance;
     }
 
     @Override

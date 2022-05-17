@@ -13,7 +13,7 @@ public class UserRepository {
     private static UserRepository instance;
 
     private UserRepository() {
-        dirtBudFirebase = new DirtBudFirebaseImpl();
+        dirtBudFirebase = DirtBudFirebaseImpl.getInstance();
 
     }
 
