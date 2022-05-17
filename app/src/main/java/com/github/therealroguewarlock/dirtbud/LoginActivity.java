@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(getApplicationContext());
 
         createSignInIntent();
-//        setContentView(R.layout.activity_firebase_ui);
+
     }
 
     public void createSignInIntent() {
@@ -55,6 +55,8 @@ public class LoginActivity extends AppCompatActivity {
     // [START auth_fui_result]
     private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
         IdpResponse response = result.getIdpResponse();
+        Log.d("SignIn", "Response returned");
+
         if (result.getResultCode() == RESULT_OK) {
             // Successfully signed in
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

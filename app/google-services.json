@@ -8,41 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:554143048645:android:e27d66ba96b9afd581e1ac",
-        "android_client_info": {
-          "package_name": "com.example.birtbud"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "554143048645-6rkfkcs8fdfani2rubdsvnrddesp6g3f.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAHKAlPkAMm6KroZ4Md_fi4Q08cSTDwJUY"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "554143048645-6rkfkcs8fdfani2rubdsvnrddesp6g3f.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:554143048645:android:0f0b72d07586f75881e1ac",
         "android_client_info": {
           "package_name": "com.github.therealroguewarlock.dirtbud"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "554143048645-2k9napm8qgicsq1k6rh9317ud3dsg9eo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.github.therealroguewarlock.dirtbud",
+            "certificate_hash": "4f0ec56aa1fc9ab5ffff89815b8bd82640c8d2ee"
+          }
+        },
         {
           "client_id": "554143048645-6rkfkcs8fdfani2rubdsvnrddesp6g3f.apps.googleusercontent.com",
           "client_type": 3
