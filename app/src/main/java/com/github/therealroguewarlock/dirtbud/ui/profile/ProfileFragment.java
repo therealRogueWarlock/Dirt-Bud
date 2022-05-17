@@ -52,7 +52,6 @@ public class ProfileFragment extends Fragment {
 	private void bindings() {
 		tv_firstName = binding.tvFirstName;
 		tv_lastName = binding.tvLastName;
-		tv_birthDay = binding.tvBirthday;
 
 		//Fitness
 		tv_vo2Max = binding.tvVo2Max;
