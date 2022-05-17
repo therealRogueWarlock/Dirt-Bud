@@ -47,7 +47,7 @@ public class AddDirtBike extends Fragment {
 
     public void addDirtBike(View view){
 
-        DirtBike newDirtBike = new DirtBike(brandSpinner.getSelectedItem().toString(), (Integer) displacementSpinner.getSelectedItem(),80,60,21,120, 0,0,strokeSpinner.getSelectedItemPosition() == 1);
+        DirtBike newDirtBike = new DirtBike(brandSpinner.getSelectedItem().toString(), Integer.parseInt(displacementSpinner.getSelectedItem().toString()),80,60,21,120, 0,0,strokeSpinner.getSelectedItemPosition() == 1);
         mViewModel.addDirtBike(newDirtBike);
     }
 
