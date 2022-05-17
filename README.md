@@ -5,6 +5,7 @@
 1. <a href="#what-is-this-app">What is this app?</a>
 2. <a href="#requirements">Requirements</a>
 3. <a href="#sketches">Sketches</a>
+4. <a href="#showcase">Showcase</a>
 
 ## What is this app?
 
@@ -15,7 +16,7 @@ This will also help you keep note of the different dates you work on your Dirtbi
 ## Requirements
 
 * [x] As a user, I want to be able to see information about my garage, so I can see my different dirt bikes
-* [ ] As a user, I want to be able to see information about myself, so I can track my fitness stats
+* [x] As a user, I want to be able to see information about myself, so I can track my fitness stats
 * [ ] As a user, I want to be able to see information about dirt bike status, so I know when different parts might need to be checked upon or changed out
 * [x] As a user, I want to be able to see all my different bike parts, so I can keep track of in use, and spare parts
 * [ ] As a user, I want to be able to see specifications about individual parts, so I do not need to remember details about every single part
@@ -24,3 +25,7 @@ This will also help you keep note of the different dates you work on your Dirtbi
 
 ## Sketches
 ![main_page](https://user-images.githubusercontent.com/42655737/159177661-0b00167d-387d-445b-be7e-4b5649715e24.png)
+
+## Showcase
+
+This <a href="https://youtu.be/g3bRHQcKWgg">link</a> is a near 3 minute showcase of the app, with Danish voiceover explaining things
