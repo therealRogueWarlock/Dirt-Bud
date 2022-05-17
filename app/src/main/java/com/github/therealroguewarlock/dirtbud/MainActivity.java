@@ -79,7 +79,9 @@ public class MainActivity extends AppCompatActivity {
 
 		navUsername.setText(username);
 		navEmail.setText(mail);
-		Glide.with(this).load(imageURI).into(navImage);
+		// Profile Picture
+		String placeholderProfilePic = "https://cdn5.vectorstock.com/i/thumb-large/87/24/man-profile-vector-31988724.jpg";
+		Glide.with(this).load(imageURI != null ? imageURI : placeholderProfilePic).into( navImage);
 	}
 
 	@Override
