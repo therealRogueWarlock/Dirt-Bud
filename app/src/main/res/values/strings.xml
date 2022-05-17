@@ -30,4 +30,26 @@
 	<string name = "height">Height</string>
 	<string name = "weight">Weight</string>
 
+	<!-- Arrays for Spinners -->
+	<string-array name="dirt_bike_brand_array">
+		<item>Yamaha</item>
+		<item>Suzuki</item>
+		<item>Honda</item>
+		<item>Kawasaki</item>
+		<item>Husqvarna</item>
+	</string-array>
+
+	<string-array name="dirt_bike_displacement_array">
+		<item>110</item>
+		<item>125</item>
+		<item>140</item>
+		<item>150</item>
+		<item>200</item>
+		<item>250</item>
+	</string-array>
+
+	<string-array name = "dirt_bike_stroke">
+		<item>2</item>
+		<item>4</item>
+	</string-array>
 </resources>
