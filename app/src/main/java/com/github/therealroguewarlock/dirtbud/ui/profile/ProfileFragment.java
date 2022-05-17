@@ -12,19 +12,50 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.github.therealroguewarlock.dirtbud.databinding.FragmentProfileBinding;
 
+
 public class ProfileFragment extends Fragment {
 
+	private TextView tv_firstName, tv_lastName, tv_birthDay;
+
+	//Fitness
+	private TextView tv_vo2Max, tv_height, tv_weight;
+
+	private TextView tv_ridingYears;
+
 	private FragmentProfileBinding binding;
+	ProfileViewModel profileViewModel;
 
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		ProfileViewModel profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
+		profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
 
 		binding = FragmentProfileBinding.inflate(inflater, container, false);
 		View root = binding.getRoot();
 
-		final TextView textView = binding.textProfile;
-		profileViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+		bindings();
+		observers();
+
 		return root;
+	}
+
+	private void observers() {
+		profileViewModel.getUserData().observe(getViewLifecycleOwner(),user -> {
+			tv_firstName.setText(user.getFirstName());
+			tv_lastName.setText(user.getLastName());
+			tv_birthDay.setText(user.getAge());
+		});
+	}
+
+	private void bindings() {
+		tv_firstName = binding.tvFirstName;
+		tv_lastName = binding.tvLastName;
+		tv_birthDay = binding.tvBirthday;
+
+		//Fitness
+		tv_vo2Max = binding.tvVo2Max;
+		tv_height = binding.tvHeight;
+		tv_weight = binding.tvWeight;
+
+		tv_ridingYears = binding.tvRidingYears;
 	}
 
 	@Override

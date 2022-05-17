@@ -33,7 +33,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/add_dirt_bike_id"
+            android:id="@+id/confirm_add_dirt_bike_id"
             android:layout_width="287dp"
             android:layout_height="wrap_content"
             android:text="add dirt bike"

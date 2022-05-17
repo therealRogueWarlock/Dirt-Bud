@@ -4,6 +4,8 @@ import android.content.Context;
 
 import androidx.lifecycle.LiveData;
 
+import com.github.therealroguewarlock.dirtbud.data_percistence.firebase.DirtBudFirebase;
+import com.github.therealroguewarlock.dirtbud.data_percistence.firebase.DirtBudFirebaseImpl;
 import com.github.therealroguewarlock.dirtbud.repository.DirtBikeRepository;
 import com.github.therealroguewarlock.dirtbud.repository.PartRepository;
 import com.github.therealroguewarlock.dirtbud.model.DummyData;
@@ -22,6 +24,10 @@ public class GarageModelImpl implements GarageModel {
 	public GarageModelImpl(Context applicationContext) {
 		bikeRepository = DirtBikeRepository.getInstance(applicationContext);
 		partRepository = PartRepository.getInstance(applicationContext);
+
+		DirtBudFirebase dirtBudFirebase = new DirtBudFirebaseImpl();
+
+
 		this.dummyData = new DummyData();
 	}
 
@@ -48,6 +54,7 @@ public class GarageModelImpl implements GarageModel {
 
 	@Override
 	public void setHours(int dirtBikeId, int hours) {
+
 		// TODO: Implement
 	}
 

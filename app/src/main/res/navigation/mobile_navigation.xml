@@ -31,6 +31,9 @@
 		<action
 				android:id = "@+id/action_nav_dirt_bike_info"
 				app:destination = "@id/nav_dirt_bike_info" />
+		<action
+			android:id="@+id/action_nav_dirt_bike_list_to_addDirtBike"
+			app:destination="@id/addDirtBike" />
 	</fragment>
 
 	<fragment
@@ -45,4 +48,9 @@
 			android:name = "com.github.therealroguewarlock.dirtbud.ui.dirt_bike_information.DirtBikeInformationFragment"
 			android:label = "Info"
 			tools:layout = "@layout/fragment_dirt_bike_information" />
+	<fragment
+		android:id="@+id/addDirtBike"
+		android:name="com.github.therealroguewarlock.dirtbud.ui.garage.AddDirtBike"
+		android:label="fragment_add_dirt_bike"
+		tools:layout="@layout/fragment_add_dirt_bike" />
 </navigation>

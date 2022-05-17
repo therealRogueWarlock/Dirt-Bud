@@ -1,6 +1,7 @@
 package com.github.therealroguewarlock.dirtbud.ui.garage.dirtbikelist;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,9 +27,11 @@ public class DirtBikeListFragment extends Fragment {
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		viewModel = new ViewModelProvider(this).get(DirtBikeListViewModel.class);
 		binding = FragmentDirtBikeListBinding.inflate(inflater, container, false);
+
 		View root = binding.getRoot();
 
 		setLiveDataObservers();
+		setOnClickListeners();
 
 		return root;
 	}
@@ -39,6 +42,9 @@ public class DirtBikeListFragment extends Fragment {
 		binding = null;
 	}
 
+	private void setOnClickListeners(){
+		binding.addDirtBikeId.setOnClickListener(this::addDirtBikeClicked);
+	}
 	private void setLiveDataObservers() {
 		RecyclerView dirtBikeListView = binding.DirtBikeRecyclerView;
 		dirtBikeListView.setLayoutManager(new LinearLayoutManager(getContext().getApplicationContext()));
@@ -56,4 +62,15 @@ public class DirtBikeListFragment extends Fragment {
 
 		NavHostFragment.findNavController(this).navigate(R.id.action_nav_dirt_bike_info, dataTransferBundle);
 	}
+
+
+
+	public void addDirtBikeClicked(View view) {
+
+		Log.i("Button", "addDirtBikeClicked: ");
+		NavHostFragment.findNavController(this).navigate(R.id.action_nav_dirt_bike_list_to_addDirtBike);
+
+	}
+
+
 }
