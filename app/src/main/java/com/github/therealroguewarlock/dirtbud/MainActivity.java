@@ -16,6 +16,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.bumptech.glide.Glide;
 import com.github.therealroguewarlock.dirtbud.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
 		navUsername.setText(username);
 		navEmail.setText(mail);
-//		navImage.setImageURI(imageURI);
+		Glide.with(this).load(imageURI).into(navImage);
 	}
 
 	@Override
