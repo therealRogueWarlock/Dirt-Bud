@@ -42,9 +42,10 @@ public class DirtBikeListFragment extends Fragment {
 		binding = null;
 	}
 
-	private void setOnClickListeners(){
+	private void setOnClickListeners() {
 		binding.addDirtBikeId.setOnClickListener(this::addDirtBikeClicked);
 	}
+
 	private void setLiveDataObservers() {
 		RecyclerView dirtBikeListView = binding.DirtBikeRecyclerView;
 		dirtBikeListView.setLayoutManager(new LinearLayoutManager(getContext().getApplicationContext()));
@@ -63,14 +64,11 @@ public class DirtBikeListFragment extends Fragment {
 		NavHostFragment.findNavController(this).navigate(R.id.action_nav_dirt_bike_info, dataTransferBundle);
 	}
 
-
-
 	public void addDirtBikeClicked(View view) {
 
 		Log.i("Button", "addDirtBikeClicked: ");
 		NavHostFragment.findNavController(this).navigate(R.id.action_nav_dirt_bike_list_to_addDirtBike);
 
 	}
-
 
 }
