@@ -12,15 +12,15 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="First Name"
-		app:layout_constraintStart_toStartOf="@+id/guideline4"
-		app:layout_constraintTop_toTopOf="@+id/guideline5" />
+		app:layout_constraintStart_toStartOf="@+id/left_margin_guide"
+		app:layout_constraintTop_toTopOf="@+id/top_margin_guide" />
 
 	<TextView
 		android:id="@+id/tv_firstName"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="show first name"
-		app:layout_constraintStart_toStartOf="@+id/guideline2"
+		android:text="N/A"
+		app:layout_constraintStart_toStartOf="@+id/user_information_guide"
 		app:layout_constraintTop_toTopOf="@+id/textFirstName" />
 
 	<!-- Last Name -->
@@ -31,34 +31,34 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="Last Name"
-		app:layout_constraintStart_toStartOf="@+id/guideline4"
+		app:layout_constraintStart_toStartOf="@+id/left_margin_guide"
 		app:layout_constraintTop_toBottomOf="@+id/textFirstName" />
 
 	<TextView
 		android:id="@+id/tv_lastName"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="show last name"
-		app:layout_constraintStart_toStartOf="@+id/guideline2"
+		android:text="N/A"
+		app:layout_constraintStart_toStartOf="@+id/user_information_guide"
 		app:layout_constraintTop_toTopOf="@+id/textLastName" />
 
 	<!-- Birthday -->
 	<TextView
-		android:id="@+id/textBirthday"
+		android:id="@+id/textAge"
 		android:layout_width="wrap_content"
 		android:layout_marginTop="10dp"
 		android:layout_height="wrap_content"
 		android:text="Birthday"
-		app:layout_constraintStart_toStartOf="@+id/guideline4"
+		app:layout_constraintStart_toStartOf="@+id/left_margin_guide"
 		app:layout_constraintTop_toBottomOf="@+id/textLastName" />
 
 	<TextView
-		android:id="@+id/tv_birthday"
+		android:id="@+id/tv_age"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="show birthday"
-		app:layout_constraintStart_toStartOf="@+id/guideline2"
-		app:layout_constraintTop_toTopOf="@+id/textBirthday" />
+		android:text="N/A"
+		app:layout_constraintStart_toStartOf="@+id/user_information_guide"
+		app:layout_constraintTop_toTopOf="@+id/textAge" />
 
 	<!-- Fitness -->
 	<TextView
@@ -67,8 +67,9 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="@string/fitness"
-		app:layout_constraintStart_toStartOf="@+id/guideline4"
-		app:layout_constraintTop_toBottomOf="@+id/textBirthday" />
+		android:textStyle="bold"
+		app:layout_constraintStart_toStartOf="@+id/left_margin_guide"
+		app:layout_constraintTop_toBottomOf="@+id/textAge" />
 
 	<!-- VO2-Max -->
 	<TextView
@@ -76,15 +77,15 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="@string/vo2_max"
-		app:layout_constraintStart_toStartOf="@+id/guideline4"
+		app:layout_constraintStart_toStartOf="@+id/left_margin_guide"
 		app:layout_constraintTop_toBottomOf="@+id/textFitness" />
 
 	<TextView
 		android:id="@+id/tv_vo2Max"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="show vo2 max"
-		app:layout_constraintStart_toStartOf="@+id/guideline2"
+		android:text="N/A"
+		app:layout_constraintStart_toStartOf="@+id/user_information_guide"
 		app:layout_constraintTop_toTopOf="@+id/textVo2Max" />
 
 
@@ -95,15 +96,15 @@
 		android:layout_marginTop="10dp"
 		android:layout_height="wrap_content"
 		android:text="@string/height"
-		app:layout_constraintStart_toStartOf="@+id/guideline4"
+		app:layout_constraintStart_toStartOf="@+id/left_margin_guide"
 		app:layout_constraintTop_toBottomOf="@+id/textVo2Max" />
 
 	<TextView
 		android:id="@+id/tv_height"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="show height"
-		app:layout_constraintStart_toStartOf="@+id/guideline2"
+		android:text="N/A"
+		app:layout_constraintStart_toStartOf="@+id/user_information_guide"
 		app:layout_constraintTop_toTopOf="@+id/textHeight" />
 
 	<!-- Weight -->
@@ -113,15 +114,15 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="@string/weight"
-		app:layout_constraintStart_toStartOf="@+id/guideline4"
+		app:layout_constraintStart_toStartOf="@+id/left_margin_guide"
 		app:layout_constraintTop_toBottomOf="@+id/textHeight" />
 
 	<TextView
 		android:id="@+id/tv_weight"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="show weight"
-		app:layout_constraintStart_toStartOf="@+id/guideline2"
+		android:text="N/A"
+		app:layout_constraintStart_toStartOf="@+id/user_information_guide"
 		app:layout_constraintTop_toTopOf="@+id/textWeight" />
 
 	<!-- Ride Years -->
@@ -131,14 +132,14 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:text="Years Riding"
-		app:layout_constraintStart_toStartOf="@+id/guideline4"
+		app:layout_constraintStart_toStartOf="@+id/left_margin_guide"
 		app:layout_constraintTop_toBottomOf="@+id/textWeight" />
 
 	<TextView
 		android:id="@+id/tv_ridingYears"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="Show riding years"
+		android:text="N/A"
 		app:layout_constraintStart_toEndOf="@+id/textYearsRiding"
 		app:layout_constraintTop_toTopOf="@+id/textYearsRiding" />
 
@@ -147,21 +148,21 @@
 
 
 	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/guideline2"
+		android:id="@+id/user_information_guide"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
 		app:layout_constraintGuide_percent="0.25" />
 
 	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/guideline4"
+		android:id="@+id/left_margin_guide"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="vertical"
 		app:layout_constraintGuide_percent="0.05" />
 
 	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/guideline5"
+		android:id="@+id/top_margin_guide"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
