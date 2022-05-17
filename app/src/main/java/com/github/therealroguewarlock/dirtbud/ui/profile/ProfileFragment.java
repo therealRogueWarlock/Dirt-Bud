@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.github.therealroguewarlock.dirtbud.databinding.FragmentProfileBinding;
 
-
 public class ProfileFragment extends Fragment {
 
 	private TextView tv_firstName, tv_lastName, tv_age;
@@ -38,14 +37,14 @@ public class ProfileFragment extends Fragment {
 	}
 
 	private void observers() {
-		profileViewModel.getUserData().observe(getViewLifecycleOwner(),user -> {
+		profileViewModel.getUserData().observe(getViewLifecycleOwner(), user -> {
 			tv_firstName.setText(user.getFirstName());
 			tv_lastName.setText(user.getLastName());
-			tv_age.setText(user.getAge());
-			tv_height.setText(user.getHeight());
-			tv_weight.setText(user.getWeight());
-			tv_vo2Max.setText(user.getVo2Max());
-			tv_ridingYears.setText(user.getYearsRiding());
+			tv_age.setText("" + user.getAge());
+			tv_height.setText("" + user.getHeight());
+			tv_weight.setText("" + user.getWeight());
+			tv_vo2Max.setText("" + user.getVo2Max());
+			tv_ridingYears.setText("" + user.getYearsRiding());
 		});
 	}
 
