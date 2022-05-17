@@ -15,7 +15,7 @@ import com.github.therealroguewarlock.dirtbud.databinding.FragmentProfileBinding
 
 public class ProfileFragment extends Fragment {
 
-	private TextView tv_firstName, tv_lastName, tv_birthDay;
+	private TextView tv_firstName, tv_lastName, tv_age;
 
 	//Fitness
 	private TextView tv_vo2Max, tv_height, tv_weight;
@@ -41,7 +41,7 @@ public class ProfileFragment extends Fragment {
 		profileViewModel.getUserData().observe(getViewLifecycleOwner(),user -> {
 			tv_firstName.setText(user.getFirstName());
 			tv_lastName.setText(user.getLastName());
-			tv_birthDay.setText(user.getAge());
+			tv_age.setText(user.getAge());
 			tv_height.setText(user.getHeight());
 			tv_weight.setText(user.getWeight());
 			tv_vo2Max.setText(user.getVo2Max());
@@ -50,14 +50,17 @@ public class ProfileFragment extends Fragment {
 	}
 
 	private void bindings() {
+		// General User Information
 		tv_firstName = binding.tvFirstName;
 		tv_lastName = binding.tvLastName;
+		tv_age = binding.tvAge;
 
-		//Fitness
+		// User Fitness
 		tv_vo2Max = binding.tvVo2Max;
 		tv_height = binding.tvHeight;
 		tv_weight = binding.tvWeight;
 
+		// User Experience
 		tv_ridingYears = binding.tvRidingYears;
 	}
 

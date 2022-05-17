@@ -48,7 +48,7 @@
 		android:layout_width="wrap_content"
 		android:layout_marginTop="10dp"
 		android:layout_height="wrap_content"
-		android:text="Birthday"
+		android:text="Age"
 		app:layout_constraintStart_toStartOf="@+id/left_margin_guide"
 		app:layout_constraintTop_toBottomOf="@+id/textLastName" />
 
@@ -136,23 +136,22 @@
 		app:layout_constraintTop_toBottomOf="@+id/textWeight" />
 
 	<TextView
-		android:id="@+id/tv_ridingYears"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="N/A"
-		app:layout_constraintStart_toEndOf="@+id/textYearsRiding"
-		app:layout_constraintTop_toTopOf="@+id/textYearsRiding" />
+			android:id = "@+id/tv_ridingYears"
+			android:layout_width = "wrap_content"
+			android:layout_height = "wrap_content"
+			android:text = "N/A"
+			app:layout_constraintTop_toTopOf = "@+id/textYearsRiding"
+			app:layout_constraintStart_toStartOf = "@+id/user_information_guide" />
 
 
 	<!-- GuideLines -->
 
-
 	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/user_information_guide"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-		app:layout_constraintGuide_percent="0.25" />
+			android:id = "@+id/user_information_guide"
+			android:layout_width = "wrap_content"
+			android:layout_height = "wrap_content"
+			android:orientation = "vertical"
+			app:layout_constraintGuide_percent = "0.3" />
 
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/left_margin_guide"
