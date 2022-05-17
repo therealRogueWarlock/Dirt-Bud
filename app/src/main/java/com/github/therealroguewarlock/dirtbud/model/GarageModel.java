@@ -54,4 +54,7 @@ public interface GarageModel {
 	 * @param hours      Hours to added to DirtBike and its parts
 	 */
 	void addHours(int dirtBikeId, int hours);
+
+
+	void addDirtBike(DirtBike dirtBike);
 }

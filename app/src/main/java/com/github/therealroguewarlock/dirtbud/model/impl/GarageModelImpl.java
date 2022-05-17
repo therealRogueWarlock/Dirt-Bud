@@ -61,4 +61,9 @@ public class GarageModelImpl implements GarageModel {
 		// TODO: Implement
 	}
 
+	@Override
+	public void addDirtBike(DirtBike dirtBike) {
+		bikeRepository.addDirtBikeToFirebase(dirtBike);
+	}
+
 }
