@@ -49,27 +49,23 @@ public class DirtBudFirebaseImpl implements DirtBudFirebase {
         MutableLiveData<User> liveUser = new MutableLiveData<>();
 
         fireStoreDB.collection("users").document(firebaseUser.getUid()).get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                Log.d("getUser", "DocumentSnapshot data: " + document.getData());
-                                // Get Map of User, Convert to JSON Tree, then to POJO
-                                Map<String, Object> dataObj = document.getData();
-                                Gson gson = new Gson();
-                                JsonElement jsonElement = gson.toJsonTree(dataObj);
-                                User user = gson.fromJson(jsonElement, User.class);
-                                // Set LiveUser
-                                liveUser.postValue(user);
-                            } else {
-                                Log.d("getUser", "User ID: " + firebaseUser.getUid());
-                                Log.d("getUser", "No such document");
-                            }
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+                            Log.d("getUser", "DocumentSnapshot data: " + document.getData());
+                            // Get Map of User, Convert to JSON Tree, then to POJO
+                            Map<String, Object> dataObj = document.getData();
+                            Gson gson = new Gson();
+                            JsonElement jsonElement = gson.toJsonTree(dataObj);
+                            User user = gson.fromJson(jsonElement, User.class);
+                            // Set LiveUser
+                            liveUser.postValue(user);
                         } else {
-                            Log.d("getUser", "get failed with ", task.getException());
+                            Log.d("getUser", "No such document");
                         }
+                    } else {
+                        Log.d("getUser", "get failed with ", task.getException());
                     }
                 });
 

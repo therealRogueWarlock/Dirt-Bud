@@ -11,7 +11,7 @@
         android:id="@+id/mark_spinner_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="Mark"
+        android:contentDescription="Brand"
         android:minHeight="48dp" />
 
     <Spinner
