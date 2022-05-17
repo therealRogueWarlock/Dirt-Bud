@@ -37,6 +37,7 @@
             android:layout_width="287dp"
             android:layout_height="wrap_content"
             android:text="add dirt bike"
+            android:onClick="addDirtBike"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
