@@ -72,4 +72,6 @@ public class User {
 	public void setVo2Max(int vo2Max) {
 		this.vo2Max = vo2Max;
 	}
+
+
 }

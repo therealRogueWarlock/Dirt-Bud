@@ -41,7 +41,10 @@ public class ProfileFragment extends Fragment {
 		profileViewModel.getUserData().observe(getViewLifecycleOwner(),user -> {
 			tv_firstName.setText(user.getFirstName());
 			tv_lastName.setText(user.getLastName());
-			tv_birthDay.setText(user.getFullName());
+			tv_birthDay.setText(user.getAge());
+			tv_height.setText(user.getHeight());
+			tv_weight.setText(user.getWeight());
+			tv_vo2Max.setText(user.getVo2Max());
 		});
 	}
 
