@@ -24,8 +24,6 @@ public class UserRepository {
     }
 
     public LiveData<User> getUserData() {
-
-        return new MutableLiveData<>(new User("Sjwqd2132","john","bob",21));
-
+        return dirtBudFirebase.getUser();
     }
 }

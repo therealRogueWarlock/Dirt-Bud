@@ -25,8 +25,6 @@ public class GarageModelImpl implements GarageModel {
 		bikeRepository = DirtBikeRepository.getInstance(applicationContext);
 		partRepository = PartRepository.getInstance(applicationContext);
 
-		DirtBudFirebase dirtBudFirebase = new DirtBudFirebaseImpl();
-
 
 		this.dummyData = new DummyData();
 	}

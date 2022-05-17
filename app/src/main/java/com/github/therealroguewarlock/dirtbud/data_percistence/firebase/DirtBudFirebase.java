@@ -2,6 +2,7 @@ package com.github.therealroguewarlock.dirtbud.data_percistence.firebase;
 
 import androidx.lifecycle.LiveData;
 
+import com.github.therealroguewarlock.dirtbud.model.entities.User;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 
@@ -16,6 +17,8 @@ public interface DirtBudFirebase {
     void delete(DirtBike dirtBike);
 
     void deleteAllDirtBikes();
+
+    LiveData<User> getUser();
 
     LiveData<List<DirtBike>> getAllDirtBikes();
 

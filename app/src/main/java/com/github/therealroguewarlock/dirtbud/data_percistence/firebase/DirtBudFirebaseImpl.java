@@ -4,36 +4,35 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
+import com.github.therealroguewarlock.dirtbud.model.entities.User;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.*;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 
 
 import java.util.List;
+import java.util.Map;
 
-public class DirtBudFirebaseImpl implements DirtBudFirebase{
+public class DirtBudFirebaseImpl implements DirtBudFirebase {
 
     private FirebaseFirestore fireStoreDB;
     private static DirtBudFirebase instance;
+    private final FirebaseUser firebaseUser;
 
 
     private DirtBudFirebaseImpl() {
         fireStoreDB = FirebaseFirestore.getInstance();
-        Log.d("fireStore test", "FirebaseImple init");
-        fireStoreDB.collection("users")
-                .get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        for (QueryDocumentSnapshot document : task.getResult()) {
-                            Log.d("fireStore test", document.getId() + " => " + document.getData());
-                        }
-                    } else {
-                        Log.w("fireStore test", "Error getting documents.", task.getException());
-                    }
-                });
+
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
     }
 
     public static DirtBudFirebase getInstance() {
@@ -42,6 +41,36 @@ public class DirtBudFirebaseImpl implements DirtBudFirebase{
         }
         return instance;
     }
+
+    public LiveData<User> getUser() {
+
+        MutableLiveData<User> liveUser = new MutableLiveData<>();
+
+        fireStoreDB.collection("users").document(firebaseUser.getUid()).get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                Log.d("getUser", "DocumentSnapshot data: " + document.getData());
+                                Map<String, Object> dataObj = document.getData();
+                                Gson gson = new Gson();
+                                JsonElement jsonElement = gson.toJsonTree(dataObj);
+                                User user = gson.fromJson(jsonElement, User.class);
+                                liveUser.postValue(user);
+                            } else {
+                                Log.d("getUser", "No such document");
+                            }
+                        } else {
+                            Log.d("getUser", "get failed with ", task.getException());
+                        }
+                    }
+                });
+
+        return liveUser;
+    }
+
 
     @Override
     public void insert(DirtBike dirtBike) {

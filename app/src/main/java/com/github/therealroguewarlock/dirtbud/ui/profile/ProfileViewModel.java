@@ -11,18 +11,10 @@ import com.github.therealroguewarlock.dirtbud.model.impl.UserModelImpl;
 public class ProfileViewModel extends ViewModel {
 
 	private UserModel userModel;
-	private final MutableLiveData<String> mText;
 
 	public ProfileViewModel() {
-		mText = new MutableLiveData<>();
-		mText.setValue("This is the profile fragment :P");
-
 		userModel = UserModelImpl.getInstance();
 
-	}
-
-	public LiveData<String> getText() {
-		return mText;
 	}
 
 	public LiveData<User> getUserData(){
