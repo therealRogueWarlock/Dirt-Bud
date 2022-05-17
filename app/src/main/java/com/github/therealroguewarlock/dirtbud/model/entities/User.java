@@ -7,8 +7,8 @@ public class User {
 	private int weight;
 	private int height;
 	private int vo2Max;
-
 	private int yearsRiding;
+
 
 	public User(String firstName, String lastName, int age, int weight, int height, int vo2Max, int yearsRiding) {
 		this.firstName = firstName;

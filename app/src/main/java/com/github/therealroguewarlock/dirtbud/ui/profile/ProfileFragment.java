@@ -45,6 +45,7 @@ public class ProfileFragment extends Fragment {
 			tv_height.setText(user.getHeight());
 			tv_weight.setText(user.getWeight());
 			tv_vo2Max.setText(user.getVo2Max());
+			tv_ridingYears.setText(user.getYearsRiding());
 		});
 	}
 
