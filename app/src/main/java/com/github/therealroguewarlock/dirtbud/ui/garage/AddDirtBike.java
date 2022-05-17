@@ -31,6 +31,7 @@ public class AddDirtBike extends Fragment {
         binding = FragmentAddDirtBikeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+
         bindings();
         spinnerAdapter();
         return root;
@@ -41,9 +42,11 @@ public class AddDirtBike extends Fragment {
         displacementSpinner = binding.displacmentSpinnerId;
         strokeSpinner = binding.strokeSpinnerId;
         addNewBikeButton = binding.confirmAddDirtBikeId;
+        addNewBikeButton.setOnClickListener(this::addDirtBike);
     }
 
     public void addDirtBike(View view){
+
         DirtBike newDirtBike = new DirtBike(brandSpinner.getSelectedItem().toString(), (Integer) displacementSpinner.getSelectedItem(),80,60,21,120, 0,0,strokeSpinner.getSelectedItemPosition() == 1);
         mViewModel.addDirtBike(newDirtBike);
     }
