@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 
-@Database(entities = {Part.class, DirtBike.class, DirtBikePartBinding.class}, version = 3)
+@Database(entities = {Part.class, DirtBike.class, DirtBikePartBinding.class}, version = 4)
 public abstract class DirtBudDatabase extends RoomDatabase {
 	private static DirtBudDatabase instance;
 
