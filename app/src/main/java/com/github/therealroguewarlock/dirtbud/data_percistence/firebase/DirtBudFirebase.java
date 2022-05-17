@@ -37,5 +37,11 @@ public interface DirtBudFirebase {
     Part getPart(int partId);
 
     List<Part> getParts(int dirtBikeId);
+
+
+    // default bike data
+    List<String> getDefaultMark();
+    List<Integer> getDefaultDisplacement();
+
 }
 

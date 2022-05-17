@@ -10,6 +10,8 @@ import com.github.therealroguewarlock.dirtbud.model.entities.User;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.Part;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -77,7 +79,21 @@ public class DirtBudFirebaseImpl implements DirtBudFirebase {
 
     @Override
     public void insert(DirtBike dirtBike) {
-
+        fireStoreDB.collection("users")
+                .document(firebaseUser.getUid())
+                .set(dirtBike)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("addDirtbike", "DocumentSnapshot successfully written!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("addDirtbike", "Error writing document", e);
+                    }
+                });
     }
 
     @Override
@@ -139,4 +155,16 @@ public class DirtBudFirebaseImpl implements DirtBudFirebase {
     public List<Part> getParts(int dirtBikeId) {
         return null;
     }
+
+    @Override
+    public List<String> getDefaultMark() {
+        return null;
+    }
+
+    @Override
+    public List<Integer> getDefaultDisplacement() {
+        return null;
+    }
+
+
 }

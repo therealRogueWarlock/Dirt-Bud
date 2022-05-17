@@ -7,6 +7,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.github.therealroguewarlock.dirtbud.data_percistence.DirtBudDAO;
 import com.github.therealroguewarlock.dirtbud.data_percistence.DirtBudDatabase;
+import com.github.therealroguewarlock.dirtbud.data_percistence.firebase.DirtBudFirebase;
+import com.github.therealroguewarlock.dirtbud.data_percistence.firebase.DirtBudFirebaseImpl;
 import com.github.therealroguewarlock.dirtbud.model.entities.dirtbike.DirtBike;
 
 import java.util.List;
@@ -18,6 +20,9 @@ public class DirtBikeRepository {
 	private static DirtBikeRepository instance;
 	// Database Access
 	private final DirtBudDAO dao;
+	// firebase database access
+	private final DirtBudFirebase dirtBudFirebase;
+
 	// LiveData used to automatically update the Viewport layers
 	private final LiveData<List<DirtBike>> allEntities;
 	// Used for Async
@@ -29,6 +34,18 @@ public class DirtBikeRepository {
 		dao = database.getDirtBudDAO();
 		allEntities = dao.getAllDirtBikes();
 		executorService = Executors.newFixedThreadPool(2);
+
+		// firebase
+		dirtBudFirebase = DirtBudFirebaseImpl.getInstance();
+	}
+
+	/**
+	 * Adds a dirtBike object to the fireStore Database.
+	 *
+	 * @param dirtBike DirtBike POJO object with data
+	 */
+	public void addDirtBikeToFirebase(DirtBike dirtBike){
+		dirtBudFirebase.insert(dirtBike);
 	}
 
 	/**
