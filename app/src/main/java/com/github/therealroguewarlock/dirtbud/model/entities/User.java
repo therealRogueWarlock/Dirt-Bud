@@ -1,9 +1,6 @@
 package com.github.therealroguewarlock.dirtbud.model.entities;
 
 public class User {
-
-	private final String userId;
-
 	private String firstName;
 	private String lastName;
 	private int age;
@@ -11,18 +8,16 @@ public class User {
 	private int height;
 	private int vo2Max;
 
-	public User(String userId, String firstName, String lastName, int age, int weight, int height, int vo2Max) {
-		this.userId = userId;
+	private int yearsRiding;
+
+	public User(String firstName, String lastName, int age, int weight, int height, int vo2Max, int yearsRiding) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
 		this.weight = weight;
 		this.height = height;
 		this.vo2Max = vo2Max;
-	}
-
-	public String getUserId() {
-		return userId;
+		this.yearsRiding = yearsRiding;
 	}
 
 	public String getFirstName() {
@@ -73,5 +68,11 @@ public class User {
 		this.vo2Max = vo2Max;
 	}
 
+	public int getYearsRiding() {
+		return yearsRiding;
+	}
 
+	public void setYearsRiding(int yearsRiding) {
+		this.yearsRiding = yearsRiding;
+	}
 }
