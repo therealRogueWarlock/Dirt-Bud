@@ -12,6 +12,7 @@
         <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/fragment_inventory.xml" value="0.1867007672634271" />
         <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/list_card_dirt_bike.xml" value="0.33" />
         <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/list_card_dirt_bike_part.xml" value="0.33" />
+        <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/layout/nav_header_main.xml" value="0.8522613065326633" />
         <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21" />
         <entry key="..\:/GitHubProjects/Sander/DirtBud/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.21" />
         <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.224" />
@@ -19,6 +20,11 @@
         <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/fragment_home.xml" value="0.19326241134751773" />
         <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/layout/fragment_profile.xml" value="0.2695035460992908" />
         <entry key="..\:/Users/Sander/StudioProjects/Dirt-Bud/app/src/main/res/menu/activity_main_drawer.xml" value="0.2484375" />
+        <entry key="..\:/Users/sande/Documents/GitHub/Dirt-Bud/app/src/main/res/layout/fragment_add_dirt_bike.xml" value="0.4" />
+        <entry key="..\:/Users/sande/Documents/GitHub/Dirt-Bud/app/src/main/res/layout/fragment_dirt_bike_information.xml" value="0.4666666666666667" />
+        <entry key="..\:/Users/sande/Documents/GitHub/Dirt-Bud/app/src/main/res/layout/fragment_dirt_bike_list.xml" value="0.1" />
+        <entry key="..\:/Users/sande/Documents/GitHub/Dirt-Bud/app/src/main/res/layout/fragment_profile.xml" value="0.4" />
+        <entry key="..\:/Users/sande/Documents/GitHub/Dirt-Bud/app/src/main/res/layout/nav_header_main.xml" value="0.3451086956521739" />
       </map>
     </option>
   </component>
